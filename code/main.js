@@ -1,10 +1,9 @@
-var version =
-    {
-        author: "bgcode",
-        ver: '0.0.1',
-        url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/',
-        icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/icon/',
-    }
+var version = {
+    author: "bgcode",
+    ver: '0.0.1',
+    url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/',
+    icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/icon/',
+}
 
 var yijimenu = [{
     title: "收藏", url: "hiker://collection", pic_url: version.icon + '37.png', col_type: 'icon_4',
@@ -26,19 +25,36 @@ var yijimenu = [{
 
 
 function yiji() {
-    var d = [];
+    let d = [];
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
             d.push(yijimenu [i])
         }
     }
-
+    d.push({
+        title:"yemian",
+        desc:"miaos",
+        url:"hiker://empty##immersiveTheme##autoCache#",
+        pic_url:"https://w.wallhaven.cc/full/l8/wallhaven-l83o92.jpg",
+        col_type:"movie_3"
+    })
     setResult(d);
 }
 
 
 function erji() {
-
+    let html=JSON.parse(fetch("https://api.web.360kan.com/v1/detail?cat=2&id=RbRrb07mRGbpNH"));
+    let data=html.data
+    let title=data.title
+    let description=data.description
+    let pic=data.cdncover
+    let a = [];
+    a.push({
+        title:title,
+        desc: description,
+        pic_url:pic,
+        col_type:"movie_1_vertical_pic_blur"
+    })
 }
 
 
@@ -50,16 +66,4 @@ function Version() {
 
 }
 
-function IO(a, b, mathod) {//a是原地址，b是本地地址,c是选择方法
-    switch (mathod) {
-        case  1:
-            downloadFile(a, b);//下载文件
-        case 2:
-            deleteFile(b);//删除文件
-        case 3:
-            fileExist(b);//判断文件是否存在
-        default:
-            log("方法错误");
-    }
-}
 
