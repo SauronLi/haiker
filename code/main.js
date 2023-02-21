@@ -7,26 +7,25 @@ var version =
     }
 
 var yijimenu = [{
-    title: "收藏", url: "hiker://collection", pic_url: version.icon + '1.png', col_type: 'icon_4',
+    title: "收藏", url: "hiker://collection", pic_url: version.icon + '37.png', col_type: 'icon_4',
 }, {
-    title: "历史", url: "hiker://history", pic_url: version.icon + '2.png', col_type: 'icon_4',
+    title: "历史", url: "hiker://history", pic_url: version.icon + '51.png', col_type: 'icon_4',
 }, {
     title: "设置", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         shezhi();
-    }), pic_url: version.icon + '3.png', col_type: 'icon_4',
+    }), pic_url: version.icon + '44.png', col_type: 'icon_4',
 }, {
     title: "搜索", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         sousuo();
-    }), pic_url: version.icon + '4.png', col_type: 'icon_4',
+    }), pic_url: version.icon + '103.png', col_type: 'icon_4',
 }, {
     col_type: 'line'
 }]
 
 
 function yiji() {
-    download()
     var d = [];
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
@@ -51,12 +50,16 @@ function Version() {
 
 }
 
-function download() {
-    for (let i = 0; i < 344; i++) {
-        let a = "https://lanmeiguojiang.com/tubiao/more/" + i + ".png";
-        let b = "hiker://files/rules/bgHouse/js/" + i + ".png";
-        downloadFile(a, b)
+function IO(a, b, mathod) {//a是原地址，b是本地地址,c是选择方法
+    switch (mathod) {
+        case  1:
+            downloadFile(a, b);//下载文件
+        case 2:
+            deleteFile(b);//删除文件
+        case 3:
+            fileExist(b);//判断文件是否存在
+        default:
+            log("方法错误");
     }
-
 }
 
