@@ -50,7 +50,7 @@ function erji() {
     let pic = data.cdncover
     let a = [];
     a.push({
-        title: "‘‘’’<b><small><font color=\"#b0e0e6\">" + title + "</font></small></b>",
+        title: "‘‘’’<b><small><font color=\"#b0e0e6\">片名" + title + "</font></small></b>",
         desc: "‘‘’’<b><small><b><font color=\"#708090\">" + title + "</font></b><font color=\"#778899\">" + description + "</font></small></b>",
         url: "pic",
         pic_url: pic,
@@ -71,6 +71,7 @@ function erji() {
         },description),
         pic_url: version.icon+"10.png",
         col_type: "icon_small_3",
+        extra:{"inheritTitle":false}//不继承标题
     })
     a.push({
         title: "搜索",
