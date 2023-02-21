@@ -32,29 +32,54 @@ function yiji() {
         }
     }
     d.push({
-        title:"yemian",
-        desc:"miaos",
-        url:"hiker://empty##immersiveTheme##autoCache#",
-        pic_url:"https://w.wallhaven.cc/full/l8/wallhaven-l83o92.jpg",
-        col_type:"movie_3"
+        title: "yemian",
+        desc: "miaos",
+        url: "hiker://empty##immersiveTheme##autoCache#",
+        pic_url: "https://w.wallhaven.cc/full/l8/wallhaven-l83o92.jpg",
+        col_type: "movie_3"
     })
     setResult(d);
 }
 
 
 function erji() {
-    let html=JSON.parse(fetch("https://api.web.360kan.com/v1/detail?cat=2&id=RbRrb07mRGbpNH"));
-    let data=html.data
-    let title=data.title
-    let description=data.description
-    let pic=data.cdncover
+    let html = JSON.parse(fetch("https://api.web.360kan.com/v1/detail?cat=2&id=RbRrb07mRGbpNH"));
+    let data = html.data
+    let title = data.title
+    let description = data.description
+    let pic = data.cdncover
     let a = [];
     a.push({
-        title:title,
-        desc: description,
-        pic_url:pic,
-        col_type:"movie_1_vertical_pic_blur"
+        title: "‘‘’’<b><small><font color=\"#b0e0e6\">" + title + "</font></small></b>",
+        desc: "‘‘’’<b><small><b><font color=\"#708090\">" + title + "</font></b><font color=\"#778899\">" + description + "</font></small></b>",
+        url: "pic",
+        pic_url: pic,
+        col_type: "movie_1_vertical_pic_blur"
     })
+    a.push({
+        title: "线路",
+        desc: "",
+        url: "",
+        pic_url: version.icon+"67.png",
+        col_type: "icon_small_3",
+    })
+    a.push({
+        title: "剧情",
+        desc: "",
+        url: $("hiker://empty#noRecordHistory##noHistory#").rule((description)=>{
+            setResult([{title: description, col_type: "long_text"}]);
+        },description),
+        pic_url: version.icon+"10.png",
+        col_type: "icon_small_3",
+    })
+    a.push({
+        title: "搜索",
+        desc: "",
+        url: "",
+        pic_url: version.icon+"195.png",
+        col_type: "icon_small_3",
+    })
+    setResult(a);
 }
 
 
