@@ -13,5 +13,9 @@ function IO(a, b, mathod) {//a是原地址，b是本地地址,c是选择方法
 //文件操作方法
 
 function Version(){
-    
+
+}
+
+function search(search){
+    fetch(url);
 }

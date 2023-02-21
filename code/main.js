@@ -3,6 +3,7 @@ var version = {
     ver: '0.0.1',
     url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/',
     icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/icon/',
+    localhost: 'hiker://files/rules/bgHouse/'
 }
 
 var yijimenu = [{
@@ -60,24 +61,27 @@ function erji() {
         title: "线路",
         desc: "",
         url: "",
-        pic_url: version.icon+"67.png",
+        pic_url: version.icon + "67.png",
         col_type: "icon_small_3",
     })
     a.push({
         title: "剧情",
         desc: "",
-        url: $("hiker://empty#noRecordHistory##noHistory#").rule((description)=>{
+        url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
-        },description),
-        pic_url: version.icon+"10.png",
+        }, description),
+        pic_url: version.icon + "10.png",
         col_type: "icon_small_3",
-        extra:{"inheritTitle":false}//不继承标题
+        extra: {"inheritTitle": false}//不继承标题
     })
     a.push({
         title: "搜索",
         desc: "",
-        url: "",
-        pic_url: version.icon+"195.png",
+        url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
+            require(version.localhost + "method.js");
+            sousuo();
+        }),
+        pic_url: version.icon + "195.png",
         col_type: "icon_small_3",
     })
     setResult(a);
@@ -92,4 +96,20 @@ function Version() {
 
 }
 
+function sousuo() {
+    let a = [];
+    a.push({
+        title: "请输入内容",
+        col_type: "input",
+        extra: {"key": input}
+    })
+    for (let i = 0; i < b.length; i++) {
+        a.push({
+            title: "请输入内容",
+            col_type: "input",
+            url: "",
+            extra: {}
+        })
+    }
 
+}
