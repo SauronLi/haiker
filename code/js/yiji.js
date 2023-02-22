@@ -1,6 +1,6 @@
 function main() {
     let d = [];
-    let zhuye = "H";
+
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
             d.push(yijimenu [i])
