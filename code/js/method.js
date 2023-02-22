@@ -1,20 +1,27 @@
-function IO(a, b, method) {//a是原地址，b是本地地址,c是选择方法
-    switch (method) {
-        case  1:
-            downloadFile(a, b);//下载文件
-        case 2:
-            deleteFile(b);//删除文件
-        case 3:
-            fileExist(b);//判断文件是否存在
-        default:
-            log("方法错误");
+function Version() {
+    if (!fileExist(version.localhost + "src/343.png")) {
+        for (var i = 1; i < 344; i++) {
+            if (!fileExist(version.localhost + "src/" + i + ".png")) {
+                downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
+            }
+        }
     }
-}
-//文件操作方法
-
-function Version(){
-
-}
+    if (!fileExist(version.localhost + "src/svg/185.svg")) {
+        for (var i = 1; i < 186; i++) {
+            if (!fileExist( version.localhost + "src/svg/" + i + ".png")) {
+                downloadFile("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".svg")
+            }
+        }
+        log("图片已经准备")
+    }
+    deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
+    downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
+    deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+    downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+    deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+    downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+    log("更新成功")
+}//版本更新
 
 function search(search){
     fetch(url);
@@ -31,19 +38,17 @@ function shezhi(){
     });
     let ur = version.localhost+"src/svg/";
     let name = "更新设置";
-
+    let arrary = "genxin";
     let des = "开启后，每次下拉首页即可更新。";
 
     d.push({
         title: "<b>" + name + "</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
-            log(getItem(arrary))
             if (getItem(arrary, arrary == "genxin" ? "on" : "off") == "on") {
                 setItem(arrary, "off");
             } else {
                 setItem(arrary, "on");
             }
-            log(getItem(arrary))
             refreshPage(false);
             return "hiker://empty";
         }, arrary),
@@ -59,7 +64,10 @@ function shezhi(){
         }
     });
 
+    if (getItem(arrary)=="on"){
 
+        Version();
+    }
     d.push({
         col_type: "line"
     })

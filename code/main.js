@@ -79,35 +79,6 @@ function manhua() {
 
 }
 
-function Version() {
-    if (fileExist(version.localhost + "src/343.png")) {
-    } else {
-        for (var i = 1; i < 344; i++) {
-            if (!fileExist(version.localhost + "src/" + i + ".png")) {
-                downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
-            }
-        }
-    }
-    if (fileExist(version.localhost + "src/svg/185.svg")) {
-        log("图片依赖已准备")
-    } else {
-        for (var i = 1; i < 186; i++) {
-            if (!fileExist( version.localhost + "src/svg/" + i + ".png")) {
-                downloadFile("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".svg")
-            }
-        }
-    }
-    var GX = getItem(array);
-    if (GX=="on") {
-        deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
-        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-        deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-        deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-        log("更新成功")
-    }
-}
 
 function sousuo() {
     let a = [];
