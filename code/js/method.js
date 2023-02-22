@@ -1,5 +1,5 @@
-function IO(a, b, mathod) {//a是原地址，b是本地地址,c是选择方法
-    switch (mathod) {
+function IO(a, b, method) {//a是原地址，b是本地地址,c是选择方法
+    switch (method) {
         case  1:
             downloadFile(a, b);//下载文件
         case 2:

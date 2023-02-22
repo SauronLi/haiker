@@ -94,11 +94,17 @@ function manhua() {
 }
 
 function Version() {
-    var nowVersion = "0.0.1";//现在版本
-    var nowtime = Date.now();
-    log(nowtime);
-
-
+    require(version.url + "js/merthod.js");
+    if (IO(version.url + "js/merthod.js",version.localhost + "js/merthod.js",3)) {
+        log("依赖已准备")
+    } else {
+        IO(version.url + "js/merthod.js", version.localhost + "js/merthod.js", 1)
+        IO(version.url + "js/yiji.js", version.localhost + "js/yiji.js", 1)
+        IO(version.url + "js/erji.js", version.localhost + "js/erji.js", 1)
+        for (var i = 1; i < 344; i++) {
+            IO(version.icon + i + ".png", version.localhost + "src" + i + ".png", 1)
+        }
+    }
 }
 
 function sousuo() {
