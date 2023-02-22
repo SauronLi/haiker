@@ -105,10 +105,10 @@ function xianlu() {
         var aa = ["线路一", "线路二", "线路三", "线路四", "线路五"];
         for (var i in aa) {
             d.push({
-                title: getMyVar('path') == 'i' ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
+                title: getItem('path') == 'i' ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
                 url: $("#noLoading#").lazyRule(() => {
-                    if (getMyVar('path') != 'i') {
-                        putMyVar('path', 'i');
+                    if (getItem('path') != 'i') {
+                        setItem('path', 'i');
                     }
                     refreshPage(false);
                     return 'toast://切换路线成功'
