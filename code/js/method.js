@@ -73,18 +73,18 @@ function shezhi(){
     let jiekou=["h","s"]
     let zhuye = ["H","S"];
     let jiekounames=["h","s"];
-    for (let i=0; i<jiekou.length;i++)  {
+    for (let i in zhuye)  {
         d.push({
             title: "<b>" + jiekou[i] + "</b>",
             url: $("#noLoading#").lazyRule((zhuye) => {
-                if (getItem(zhuye[i], zhuye[i] == "H" ? "on" : "off") == "on") {
+                if (getItem(zhuye, zhuye == "H" ? "on" : "off") == "on") {
                     setItem(zhuye, "off");
                 } else {
                     setItem(zhuye, "on");
                 }
                 refreshPage(false);
                 return "hiker://empty";
-            }, zhuye),
+            }, zhuye[i]),
             img: getItem(zhuye[i], zhuye[i] == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
             col_type: "text_icon",
             extra: {
