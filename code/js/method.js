@@ -79,9 +79,5 @@ function shezhi() {
         Version();
     }
 
-    if (getItem(S1) == "on") {
-        getItem(H1, "off")
-    }
-
     setResult(d);
 }
