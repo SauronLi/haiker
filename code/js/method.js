@@ -60,7 +60,7 @@ function shezhi() {
         col_type: "avatar",
         img: version.localhost + "src/50.png",
     });
-
+    let zhuye="H";
     d.push({
             title: "<b> H漫画 </b>",
             url: $("#noLoading#").lazyRule((zhuye) => {
