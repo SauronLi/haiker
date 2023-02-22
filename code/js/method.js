@@ -86,7 +86,7 @@ function sousuo() {
     var searchurl = $('').lazyRule(() => {
         var bn = input;
         return $('hiker://empty#noRecordHistory##noHistory#').rule((bn) => {
-            require(version.localhost+"js/method.js");
+            require("hiker://files/rules/bgHouse/js/method.js");
             search(bn);
         }, bn);
 
