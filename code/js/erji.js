@@ -98,6 +98,9 @@ function xianlu() {
     var d = [];
     if (getItem("xl") == "ka") {
         d.push({
+            col_type: 'line'
+        })
+        d.push({
             title: '‘‘’’<small><b><font color="#33cccc">线路 : </font></b></small>',
             url: "hiker://empty",
             col_type: "scroll_button"
@@ -105,10 +108,10 @@ function xianlu() {
         var aa = ["线路一", "线路二", "线路三", "线路四", "线路五"];
         for (var i in aa) {
             d.push({
-                title: getItem('path') == 'i' ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
+                title: getItem('path') == i ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
                 url: $("#noLoading#").lazyRule(() => {
-                    if (getItem('path') != 'i') {
-                        setItem('path', 'i');
+                    if (getItem('path') != i) {
+                        setItem('path', i);
                     }
                     refreshPage(false);
                     return 'toast://切换路线成功'
