@@ -4,7 +4,14 @@ function main() {
     let title = MY_PARAMS.title;
     let description = MY_PARAMS.desc
     let pic = MY_PARAMS.pic_url;
-    var bb = ["//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl2\"]/@onclick", "//*[@id=\"xl3\"]/@onclick", "//*[@id=\"xl4\"]/@onclick", "//*[@id=\"xl5\"]/@onclick"]
+    var bb = {
+        线路一: "//*[@id=\"xl1\"]/@onclick",
+        线路二: "//*[@id=\"xl2\"]/@onclick",
+        线路三: "//*[@id=\"xl3\"]/@onclick",
+        线路四: "//*[@id=\"xl4\"]/@onclick",
+        线路五: "//*[@id=\"xl5\"]/@onclick"
+    };
+    let xl = xianlu();
     var url = xpathArray(html, eval("bb." + getItem("path")));
     let a = [];
     a.push({
@@ -48,13 +55,7 @@ function main() {
         pic_url: version.icon + "195.png",
         col_type: "icon_small_3",
     })
-    var bb = {
-        线路一: "//*[@id=\"xl1\"]/@onclick",
-        线路二: "//*[@id=\"xl2\"]/@onclick",
-        线路三: "//*[@id=\"xl3\"]/@onclick",
-        线路四: "//*[@id=\"xl4\"]/@onclick",
-        线路五: "//*[@id=\"xl5\"]/@onclick"
-    }
+
     var ds = '<span style="color:#19B89D">选集排序<small><font color=\'grey\'>	共' + url.length + '条</font></small></span>'
     a.push({
         title: getItem("zf", "f") == "z" ? ds + '<span style="color: #33cccc">▴</span>' : ds + '<span style="color: #ff7f50">▾</span>',
@@ -70,7 +71,6 @@ function main() {
         }),
         pic_url: getItem("zf", "f") == "z" ? version.localhost + "src/svg/123.svg" : version.localhost + "src/svg/124.svg",
     })
-    let xl = xianlu();
     for (let i in xl) {
         a.push(xl[i])
     }
