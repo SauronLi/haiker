@@ -5,7 +5,6 @@ var version = {
     icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/icon/',
     localhost: 'hiker://files/rules/bgHouse/'
 }
-
 var yijimenu = [{
     title: "收藏", url: "hiker://collection", pic_url: version.icon + '37.png', col_type: 'icon_4',
 }, {
