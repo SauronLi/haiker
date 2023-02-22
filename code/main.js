@@ -31,47 +31,8 @@ function yiji() {
 
 
 function erji() {
-    let html = JSON.parse(fetch("https://api.web.360kan.com/v1/detail?cat=2&id=RbRrb07mRGbpNH"));
-    let data = html.data
-    let title = data.title
-    let description = data.description
-    let pic = data.cdncover
-    let a = [];
-    a.push({
-        title: "‘‘’’<b><small><font color=\"#b0e0e6\">片名" + title + "</font></small></b>",
-        desc: "‘‘’’<b><small><b><font color=\"#708090\">" + title + "</font></b><font color=\"#778899\">" + description + "</font></small></b>",
-        url: "pic",
-        pic_url: pic,
-        col_type: "movie_1_vertical_pic_blur"
-    })
-    a.push({
-        title: "线路",
-        desc: "",
-        url: "",
-        pic_url: version.icon + "67.png",
-        col_type: "icon_small_3",
-    })
-    a.push({
-        title: "剧情",
-        desc: "",
-        url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
-            setResult([{title: description, col_type: "long_text"}]);
-        }, description),
-        pic_url: version.icon + "10.png",
-        col_type: "icon_small_3",
-        extra: {"inheritTitle": false}//不继承标题
-    })
-    a.push({
-        title: "搜索",
-        desc: "",
-        url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
-            require(version.localhost + "method.js");
-            sousuo();
-        }),
-        pic_url: version.icon + "195.png",
-        col_type: "icon_small_3",
-    })
-    setResult(a);
+    require(version.localhost + "js/erji.js")
+    main();
 }
 
 
@@ -99,7 +60,7 @@ function sousuo() {
 }
 
 function shezi() {
-    require(version.url + "js/method.js");
+    require(version.localhost + "js/method.js");
     // require(version.url + "/test/learn/she.js");
     shezhi();
 }
