@@ -97,8 +97,10 @@ function shezhi(){
             }
         });
     }
-
+    if (getItem(arrary)=="on"){
         Version();
+    }
+
 
     setResult(d);
 }
