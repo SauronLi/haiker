@@ -102,9 +102,9 @@ function shezhi(){
         Version();
     }
     if (getItem(H)=="on"){
-        getItem(s,"off")
+        getItem(S,"off")
     }
-    if (getItem(s)=="on"){
+    if (getItem(S)=="on"){
         getItem(H,"off")
     }
 
