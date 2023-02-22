@@ -31,7 +31,7 @@ function shezhi(){
     });
     let ur = version.localhost+"src/svg/";
     let name = "更新设置";
-    let arrary = "genxin";
+
     let des = "开启后，每次下拉首页即可更新。";
 
     d.push({

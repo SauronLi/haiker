@@ -22,7 +22,7 @@ var yijimenu = [{
 }, {
     col_type: 'line'
 }]
-
+let arrary = "genxin";
 function yiji() {
     Version()
     require(version.localhost + "js/yiji.js")
