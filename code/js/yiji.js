@@ -1,4 +1,4 @@
-function yiji() {
+function main() {
     let d = [];
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
