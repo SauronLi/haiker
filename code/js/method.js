@@ -60,14 +60,8 @@ function shezhi(){
 
 
     d.push({
-        col_type: "line_blank"
+        col_type: "line"
     })
 
-    d.push({
-        title: "<b><small>播放</small></b>",
-        url: "hiker://empty",
-        col_type: "avatar",
-        img: bturl + "93.png",
-    });
     setResult(d);
 }
