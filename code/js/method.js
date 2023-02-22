@@ -37,9 +37,8 @@ function shezhi() {
         img: version.localhost + "src/94.png",
     });
     let ur = version.localhost + "src/svg/";
-    let name = "更新设置";
     d.push({
-        title: "<b>" + name + "</b>",
+        title: "<b>更新设置</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
             if (getItem(arrary, arrary == "genxin" ? "on" : "off") == "on") {
                 setItem(arrary, "off");
@@ -63,7 +62,7 @@ function shezhi() {
     });
 
     d.push({
-            title: "<b>" + H漫画 + "</b>",
+            title: "<b> H漫画 </b>",
             url: $("#noLoading#").lazyRule((zhuye) => {
                 if (getItem(zhuye, zhuye == "H" ? "on" : "off") == "on") {
                     setItem(zhuye, "off");
@@ -75,8 +74,7 @@ function shezhi() {
             }, zhuye),
             img: getItem(zhuye[i], zhuye[i] == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
             col_type: "text_icon",
-        }
-    )
+        })
     if (getItem(arrary) == "on") {
         Version();
     }
