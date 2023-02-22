@@ -146,11 +146,11 @@ function shezi() {
         title: "<b>更新</b>",
         col_type: "text_icon",
         url: $("#noLoading#").lazyRule(
-        (储存) => {
-            if (getItem(储存, 储存 == "\u9996\u9875" ? "on" : "off") == "on") {
-                setItem(储存, "off");
+        (GX) => {
+            if (getItem(GX, GX == true ? "on" : "off") == "on") {
+                setItem(GX, "off");
             } else {
-                setItem(储存, "on");
+                setItem(GX, "on");
             }
             refreshPage(false);
             return "hiker://empty";
@@ -162,4 +162,5 @@ function shezi() {
     for (var i in shezimenu) {
         bb.push(shezimenu [i])
     }
+    setResult(bb);
 }
