@@ -126,8 +126,7 @@ function search(d) {
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
             url: $("hiker://empty#noRecordHistory##noHistory#").rule((b) => {
-                require(config.依赖);
-                erji1(b);
+                log("found")
             }, b),
             col_type: 'movie_2',
             extra: {
