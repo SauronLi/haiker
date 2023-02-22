@@ -90,7 +90,16 @@ function Version() {
             }
         }
     }
-    var GX=true
+    if (fileExist(version.localhost + "src/svg/343.svg")) {
+        log("图片依赖已准备")
+    } else {
+        for (var i = 1; i < 186; i++) {
+            if (!fileExist("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".png")) {
+                downloadFile("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".png")
+            }
+        }
+    }
+    var GX = true
     if (GX) {
         deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
@@ -124,4 +133,33 @@ function sousuo() {
         })
     }
 
+}
+
+function shezi() {
+    let bb = [];
+    let shezimenu = [{
+        title: "‘‘’’<b><small>更新</small></b>",
+        url: "hiker://empty",
+        pic_url: version.icon+"src/94.png",
+        col_type: "avatar",
+    }, {
+        title: "<b>更新</b>",
+        col_type: "text_icon",
+        url: $("#noLoading#").lazyRule(
+        (储存) => {
+            if (getItem(储存, 储存 == "\u9996\u9875" ? "on" : "off") == "on") {
+                setItem(储存, "off");
+            } else {
+                setItem(储存, "on");
+            }
+            refreshPage(false);
+            return "hiker://empty";
+        }
+    )("轮播"),
+        pic_url: version.icon+"src/63.png",
+
+    }]
+    for (var i in shezimenu) {
+        bb.push(shezimenu [i])
+    }
 }
