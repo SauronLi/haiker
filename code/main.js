@@ -98,6 +98,7 @@ function sousuo() {
 }
 
 function shezi() {
-    require(version.url + "js/method.js");
-    shezhi();
+    // require(version.url + "js/method.js");
+    require(version.url + "/test/learn/she.js");
+    // shezhi();
 }
