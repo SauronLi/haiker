@@ -4,10 +4,11 @@ function main() {
     let title = MY_PARAMS.title;
     let description = MY_PARAMS.desc
     let pic = MY_PARAMS.pic_url;
+    var bb = ["//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl2\"]/@onclick", "//*[@id=\"xl3\"]/@onclick", "//*[@id=\"xl4\"]/@onclick", "//*[@id=\"xl5\"]/@onclick"]
 
     let a = [];
     a.push({
-        title: "‘‘’’<b><small><font color=\"#b0e0e6\">片名" + title + "</font></small></b>",
+        title: "‘‘’’<b><small><font color=\"#b0e0e6\">片名:" + "\n" + "\n" + title + "</font></small></b>",
         desc: "‘‘’’<b><small><b><font color=\"#708090\">" + title + "</font></b><font color=\"#778899\">" + description + "</font></small></b>",
         url: "pic",
         pic_url: pic,
@@ -15,8 +16,15 @@ function main() {
     })
     a.push({
         title: "线路",
-        desc: "",
-        url: "",
+        url: $("#noLoading#").lazyRule(() => {
+            if (getItem("xl", "gua") == "ka") {
+                clearItem("xl");
+            } else {
+                setItem("xl", "ka");
+            }
+            refreshPage(false);
+            return "#noHistory#hiker://empty"
+        }),
         pic_url: version.icon + "67.png",
         col_type: "icon_small_3",
     })
@@ -40,7 +48,12 @@ function main() {
         pic_url: version.icon + "195.png",
         col_type: "icon_small_3",
     })
-    var url = xpathArray(html,"//*[@id=\"xl1\"]/@onclick");
+    var bb = ["//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl2\"]/@onclick", "//*[@id=\"xl3\"]/@onclick", "//*[@id=\"xl4\"]/@onclick", "//*[@id=\"xl5\"]/@onclick"]
+    let xl = xianlu();
+    for (let i in xl) {
+        d.push(xl[i])
+    }
+    var url = xpathArray(html, bb[getItem("path")]);
     for (let i in url) {
         a.push({
             title: "第" + (i + 1) + "话",
@@ -77,4 +90,35 @@ function openMH(bookid, linkid, path) {
         }
     }
     return ll
+}
+
+
+function xianlu() {
+    var d = [];
+    if (getItem("xl") == "ka") {
+        d.push({
+            title: '‘‘’’<small><b><font color="#33cccc">线路 : </font></b></small>',
+            url: "hiker://empty",
+            col_type: "scroll_button"
+        })
+        var aa = ["线路一", "线路二", "线路三", "线路四", "线路五"];
+        for (var i in aa) {
+            d.push({
+                title: getMyVar('path') == 'i' ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
+                url: $("#noLoading#").lazyRule(() => {
+                    if (getMyVar('path') != 'i') {
+                        putMyVar('path', 'i');
+                    }
+                    refreshPage(false);
+                    return 'toast://切换路线成功'
+                }),
+                col_type: "scroll_button"
+            });
+        }
+    }
+    d.push({
+        col_type: 'line'
+    })
+    return d;
+
 }
