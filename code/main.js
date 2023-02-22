@@ -24,6 +24,7 @@ var yijimenu = [{
 }]
 let arrary = "genxin";
 let zhuye="H";
+let path=""
 function yiji() {
     require(version.localhost + "js/yiji.js")
     main();
