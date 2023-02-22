@@ -23,7 +23,7 @@ var yijimenu = [{
     col_type: 'line'
 }]
 let arrary = "genxin";
-let zheye="H";
+let zhuye="H";
 function yiji() {
     require(version.localhost + "js/yiji.js")
     main();
