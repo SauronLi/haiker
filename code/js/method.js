@@ -29,7 +29,7 @@ function shezhi(){
         col_type: "avatar",
         img: version.localhost + "src/94.png",
     });
-    let ur = version.localhost+"svg/";
+    let ur = version.localhost+"src/svg/";
     let name = "更新设置";
     let arrary = "轮播";
     let des = "开启后，频道顶部以窗口轮播影视剧，关闭显示随机图片。";
