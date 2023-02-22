@@ -13,7 +13,7 @@ var yijimenu = [{
 }, {
     title: "设置", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
-        shezhi();
+        shezi();
     }), pic_url: version.icon + '44.png', col_type: 'icon_4',
 }, {
     title: "搜索", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
@@ -85,7 +85,7 @@ function Version() {
         log("图片依赖已准备")
     } else {
         for (var i = 1; i < 344; i++) {
-            if (!fileExist(version.icon + i + ".png", version.localhost + "src/" + i + ".png")) {
+            if (!fileExist(version.localhost + "src/" + i + ".png")) {
                 downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
             }
         }
@@ -94,8 +94,8 @@ function Version() {
         log("图片依赖已准备")
     } else {
         for (var i = 1; i < 186; i++) {
-            if (!fileExist("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".png")) {
-                downloadFile("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".png")
+            if (!fileExist( version.localhost + "src/svg/" + i + ".png")) {
+                downloadFile("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".svg")
             }
         }
     }
