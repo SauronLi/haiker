@@ -40,7 +40,7 @@ function main() {
         pic_url: version.icon + "195.png",
         col_type: "icon_small_3",
     })
-    var url = xpathArray(html, "//*[@class=\"cell-title\"]/text()");
+    var url = xpathArray(html,"//*[@id=\"xl1\"]/@onclick");
     for (let i in url) {
         a.push({
             title: "第" + (i + 1) + "话",
