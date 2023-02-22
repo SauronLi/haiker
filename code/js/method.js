@@ -71,7 +71,7 @@ function shezhi(){
         img: version.localhost + "src/50.png",
     });
     let jiekou=["h","s"]
-    let zhuye = "H";
+    let zhuye = ["H","S"];
     let jiekounames=["h","s"];
     for (let i=0; i<jiekou.length;i++)  {
         d.push({
