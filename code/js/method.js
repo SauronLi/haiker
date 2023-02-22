@@ -62,9 +62,7 @@ function shezhi(){
         }
     });
 
-    if (getItem(arrary)=="on"){
-        Version();
-    }
+
     d.push({
         col_type: "line"
     })
@@ -100,6 +98,8 @@ function shezhi(){
             }
         });
     }
-
+    if (getItem(arrary)=="on"){
+        Version();
+    }
     setResult(d);
 }
