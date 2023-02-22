@@ -24,7 +24,6 @@ var yijimenu = [{
 }]
 let arrary = "genxin";
 function yiji() {
-    Version()
     require(version.localhost + "js/yiji.js")
     main();
 }
