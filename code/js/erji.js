@@ -53,7 +53,7 @@ function main() {
     for (let i in xl) {
         a.push(xl[i])
     }
-    log(bb[getItem("path")])
+    log(getItem("path"))
     var url = xpathArray(html, bb[getItem("path")]);
     for (let i in url) {
         a.push({
