@@ -94,10 +94,10 @@ function manhua() {
 }
 
 function Version() {
-    if (fileExist(version.localhost + "js/merthod.js")) {
+    if (fileExist(version.localhost + "js/method.js")) {
         log("依赖已准备")
     } else {
-        downloadFile(version.url + "js/merthod.js", version.localhost + "js/merthod.js")
+        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
         downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
         for (var i = 1; i < 344; i++) {
