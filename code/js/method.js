@@ -71,7 +71,7 @@ function shezhi(){
         img: version.localhost + "src/50.png",
     });
     let jiekou=["h","s"]
-    let zhuye = ["H","S"];
+    let zhuye = ["H1","S1"];
     let jiekounames=["h","s"];
     for (let i in zhuye)  {
         d.push({
@@ -101,11 +101,11 @@ function shezhi(){
     if (getItem(arrary)=="on"){
         Version();
     }
-    if (getItem(H)=="on"){
-        getItem(S,"off")
+    if (getItem(H1)=="on"){
+        getItem(S1,"off")
     }
-    if (getItem(S)=="on"){
-        getItem(H,"off")
+    if (getItem(S1)=="on"){
+        getItem(H1,"off")
     }
 
     setResult(d);
