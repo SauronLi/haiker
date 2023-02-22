@@ -94,25 +94,16 @@ function manhua() {
 }
 
 function Version() {
-    require(version.url + "js/merthod.js");
-    if (IO(version.url + "js/merthod.js",version.localhost + "js/merthod.js",3)) {
+    if (fileExist(version.localhost + "js/merthod.js")) {
         log("依赖已准备")
     } else {
-        IO(version.url + "js/merthod.js", version.localhost + "js/merthod.js", 1)
-        IO(version.url + "js/yiji.js", version.localhost + "js/yiji.js", 1)
-        IO(version.url + "js/erji.js", version.localhost + "js/erji.js", 1)
+        downloadFile(version.url + "js/merthod.js", version.localhost + "js/merthod.js")
+        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
         for (var i = 1; i < 344; i++) {
-            IO(version.icon + i + ".png", version.localhost + "src" + i + ".png", 1)
+            downloadFile(version.icon + i + ".png", version.localhost + "src" + i + ".png")
         }
     }
-    d.push({
-        title: "yemian",
-        desc: "miaos",
-        url: "hiker://empty##immersiveTheme##autoCache#",
-        pic_url: "https://w.wallhaven.cc/full/l8/wallhaven-l83o92.jpg",
-        col_type: "movie_3"
-    })
-    setResult(d);
 }
 
 function sousuo() {
