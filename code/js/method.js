@@ -38,9 +38,7 @@ function shezhi(){
     });
     let ur = version.localhost+"src/svg/";
     let name = "更新设置";
-    let arrary = "genxin";
     let des = "开启后，每次下拉首页即可更新。";
-
     d.push({
         title: "<b>" + name + "</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
@@ -65,12 +63,43 @@ function shezhi(){
     });
 
     if (getItem(arrary)=="on"){
-
         Version();
     }
     d.push({
         col_type: "line"
     })
+    d.push({
+        title: "<b><small>首页选择</small></b>",
+        url: "hiker://empty",
+        col_type: "avatar",
+        img: version.localhost + "src/50.png",
+    });
+    let jiekou=["h","s"]
+    let jiekounames=["h","s"];
+    for (let i=0; i<jiekou.length;i++)  {
+        d.push({
+            title: "<b>" + jiekou[i] + "</b>",
+            url: $("#noLoading#").lazyRule((zhuye) => {
+                if (getItem(zhuye, zhuye == "H" ? "on" : "off") == "on") {
+                    setItem(zhuye, "off");
+                } else {
+                    setItem(zhuye, "on");
+                }
+                refreshPage(false);
+                return "hiker://empty";
+            }, zhuye),
+            img: getItem(zhuye, zhuye == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+            col_type: "text_icon",
+            extra: {
+                longClick: [{
+                    title: jiekounames[i],
+                    js: $.toString((des) => {
+                        return "toast://" + des;
+                    }, jiekounames[i])
+                }]
+            }
+        });
+    }
 
     setResult(d);
 }

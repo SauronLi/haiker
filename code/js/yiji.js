@@ -1,14 +1,18 @@
 function main() {
     let d = [];
+    let zhuye = "H";
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
             d.push(yijimenu [i])
         }
     }
-    let x=yingshi();
-    for (var i in x) {
-        d.push(x[i])
+    if (getItem(zhuye)=="on") {
+        let x=yingshi();
+        for (var i in x) {
+            d.push(x[i])
+        }
     }
+
     setResult(d);
 }
 
