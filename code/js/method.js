@@ -101,7 +101,12 @@ function shezhi(){
     if (getItem(arrary)=="on"){
         Version();
     }
-
+    if (getItem(H)=="on"){
+        set(s,"off")
+    }
+    if (getItem(s)=="on"){
+        set(H,"off")
+    }
 
     setResult(d);
 }
