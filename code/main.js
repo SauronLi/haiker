@@ -97,21 +97,15 @@ function Version() {
             }
         }
     }
-    var GX = true
-    if (GX) {
+    var GX = getItem(array);
+    if (GX=="on") {
         deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-        log("methodji()")
-    }
-    if (GX) {
         deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
         downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-        log("yiji()")
-    }
-    if (GX) {
         deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-        log("erji()")
+        log("更新成功")
     }
 }
 

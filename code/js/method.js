@@ -32,7 +32,7 @@ function shezhi(){
     let ur = version.localhost+"src/svg/";
     let name = "更新设置";
     let arrary = "genxin";
-    let des = "开启后，频道顶部以窗口轮播影视剧，关闭显示随机图片。";
+    let des = "开启后，每次下拉首页即可更新。";
 
     d.push({
         title: "<b>" + name + "</b>",
