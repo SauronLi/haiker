@@ -2,7 +2,6 @@
 
 function main() {
     var html = getResCode()
-    var d = [];
     let title = xpath(html, "//*[@id=\"book\"]/div[1]/h1/text()")
     let description = xpath(html, "//*[@id=\"book\"]/div[1]/p[4]/text()")
     let pic = xpath(html, "//*[@id=\"book\"]/div[1]/p[1]/img/@src")
@@ -52,7 +51,7 @@ function main() {
             },(url[i])), col_type: 'text_4',
         })
     }
-    setResult(d);
+    setResult(a);
 }
 function openMH(bookid, linkid, path) {
     var localhost = 'https://www.mhdnf.xyz'
