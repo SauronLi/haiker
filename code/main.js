@@ -26,7 +26,7 @@ var yijimenu = [{
 
 function yiji() {
     Version()
-    require(version.localhost+"yiji.js")
+    require(version.localhost+"js/yiji.js")
     main();
 }
 
