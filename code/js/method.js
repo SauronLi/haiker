@@ -86,7 +86,7 @@ function sousuo() {
     var searchurl = $('').lazyRule(() => {
         var bn = input;
         return $('hiker://empty#noRecordHistory##noHistory#').rule((bn) => {
-            require(config.依赖);
+            require(version.localhost+"js/method.js");
             search(bn);
         }, bn);
 
@@ -126,7 +126,7 @@ function search(d) {
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
             url: $("hiker://empty#noRecordHistory##noHistory#").rule((b) => {
-                log("found")
+                log("b")
             }, b),
             col_type: 'movie_2',
             extra: {
