@@ -59,8 +59,8 @@ function main() {
     for (let i in xl) {
         a.push(xl[i])
     }
-    var url = xpathArray(html, bb.getItem("path"));
-    for (let i in url) {
+    var url = xpathArray(html, eval("bb."+getItem("path")));
+    for (let i =0;i<url.length;i++) {
         a.push({
             title: "第" + (i + 1) + "话",
             url: $(url).lazyRule((url) => {
