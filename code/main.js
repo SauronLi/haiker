@@ -26,7 +26,7 @@ var yijimenu = [{
 
 function yiji() {
     Version()
-    require(version.localhost+"js/yiji.js")
+    require(version.localhost + "js/yiji.js")
     main();
 }
 
@@ -88,28 +88,20 @@ function Version() {
             if (!fileExist(version.icon + i + ".png", version.localhost + "src/" + i + ".png")) {
                 downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
             }
-             }
+        }
     }
-    if (!fileExist(version.localhost + "js/method.js")) {
-        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-        log("methodji()")
-    }else {
+    var GX=true
+    if (GX) {
         deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
         log("methodji()")
     }
-    if (!fileExist(version.localhost + "js/yiji.js")) {
-        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-        log("yiji()")
-    }else {
+    if (GX) {
         deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
         downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
         log("yiji()")
     }
-    if (!fileExist(version.localhost + "js/erji.js")) {
-        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-        log("erji()")
-    }else {
+    if (GX) {
         deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
         log("erji()")
