@@ -97,6 +97,7 @@ function shezhi(){
             }
         });
     }
+    log(getItem(arrary))
     if (getItem(arrary)=="on"){
         Version();
     }
