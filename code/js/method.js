@@ -31,13 +31,14 @@ function shezhi(){
     });
     let ur = version.localhost+"src/svg/";
     let name = "更新设置";
-    let arrary = "轮播";
+    let arrary = "genxin";
     let des = "开启后，频道顶部以窗口轮播影视剧，关闭显示随机图片。";
 
     d.push({
         title: "<b>" + name + "</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
-            if (getItem(arrary, arrary == "轮播" ? "on" : "off") == "on") {
+            log(getItem(arrary))
+            if (getItem(arrary, arrary == "genxin" ? "on" : "off") == "on") {
                 setItem(arrary, "off");
             } else {
                 setItem(arrary, "on");
@@ -46,7 +47,7 @@ function shezhi(){
             refreshPage(false);
             return "hiker://empty";
         }, arrary),
-        img: getItem(arrary, arrary == "轮播" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+        img: getItem(arrary, arrary == "genxin" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
         col_type: "text_icon",
         extra: {
             longClick: [{
