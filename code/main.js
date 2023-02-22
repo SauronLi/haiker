@@ -38,7 +38,7 @@ function erji() {
 
 function sousuo() {
     require(version.localhost + "js/method.js")
-    main();
+    sousuo1();
 
 }
 

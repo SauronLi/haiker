@@ -78,7 +78,7 @@ function shezhi() {
     setResult(d);
 }
 
-function sousuo() {
+function sousuo1() {
     addListener("onClose", $.toString(() => {
         clearMyVar('sousuo$input');
     }));
