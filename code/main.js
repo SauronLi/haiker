@@ -36,27 +36,9 @@ function erji() {
     main();
 }
 
-
-function manhua() {
-
-}
-
-
 function sousuo() {
-    let a = [];
-    a.push({
-        title: "请输入内容",
-        col_type: "input",
-        extra: {"key": input}
-    })
-    for (let i = 0; i < b.length; i++) {
-        a.push({
-            title: "请输入内容",
-            col_type: "input",
-            url: "",
-            extra: {}
-        })
-    }
+    require(version.localhost + "js/method.js")
+    main();
 
 }
 

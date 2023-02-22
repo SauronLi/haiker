@@ -23,10 +23,6 @@ function Version() {
     log("更新成功")
 }//版本更新
 
-function search(search) {
-    fetch(url);
-}
-
 
 function shezhi() {
     var d = [];
@@ -62,19 +58,19 @@ function shezhi() {
     });
 
     d.push({
-            title: "<b> H漫画 </b>",
-            url: $("#noLoading#").lazyRule((zhuye) => {
-                if (getItem(zhuye, zhuye == "H" ? "on" : "off") == "on") {
-                    setItem(zhuye, "off");
-                } else {
-                    setItem(zhuye, "on");
-                }
-                refreshPage(false);
-                return "hiker://empty";
-            }, zhuye),
-            img: getItem(zhuye, zhuye == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
-            col_type: "text_icon",
-        })
+        title: "<b> H漫画 </b>",
+        url: $("#noLoading#").lazyRule((zhuye) => {
+            if (getItem(zhuye, zhuye == "H" ? "on" : "off") == "on") {
+                setItem(zhuye, "off");
+            } else {
+                setItem(zhuye, "on");
+            }
+            refreshPage(false);
+            return "hiker://empty";
+        }, zhuye),
+        img: getItem(zhuye, zhuye == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+        col_type: "text_icon",
+    })
     if (getItem(arrary) == "on") {
         Version();
     }
@@ -82,4 +78,64 @@ function shezhi() {
     setResult(d);
 }
 
+function sousuo() {
+    addListener("onClose", $.toString(() => {
+        clearMyVar('sousuo$input');
+    }));
+    var d = [];
+    var searchurl = $('').lazyRule(() => {
+        var bn = input;
+        return $('hiker://empty#noRecordHistory##noHistory#').rule((bn) => {
+            require(config.依赖);
+            search(bn);
+        }, bn);
 
+
+    });
+    d.push({
+        title: '🔍',
+        url: $.toString((searchurl) => {
+            return input + searchurl;
+        }, searchurl),
+
+        col_type: 'input',
+        extra: {
+            titleVisible: true,
+        }
+    });
+    setResult(d);
+
+}
+
+
+function search(d) {
+    var x = [];
+    var local = "https://www.mhdnf.xyz"
+    var localhost = "https://www.mhdnf.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName="
+    var url = localhost + d;
+    var html = fetch(url)
+    var BT = xpathArray(html, '//*[@id="booklist"]/div/div/div/p/span/text()');
+    var LJ = xpathArray(html, '//*[@id="booklist"]/div/div/@onclick');
+    var XQ = xpathArray(html, '//*[@id="booklist"]/div/div/div[2]/p[2]/text()');
+    var TP = xpathArray(html, '//*[@id="booklist"]/div/div/div[1]/img/@src');
+    for (var i = 0; i < BT.length; i++) {
+        var a = LJ[i];
+        var b = local + a.replace(/window\.open\(\'|\'\)/g, "")
+        x.push({
+            title: BT[i],
+            desc: XQ[i].replace("\r\n", ""),
+            pic_url: TP[i],
+            url: $("hiker://empty#noRecordHistory##noHistory#").rule((b) => {
+                require(config.依赖);
+                erji1(b);
+            }, b),
+            col_type: 'movie_2',
+            extra: {
+                titleVisible: true,
+                title: BT[i]
+            }
+        });
+
+    }
+    setResult(x);
+}
