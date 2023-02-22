@@ -47,7 +47,7 @@ function shezhi(){
             return "hiker://empty";
         }, arrary),
         img: getItem(arrary, arrary == "轮播" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
-        col_type: text_icon,
+        col_type: "text_icon",
         extra: {
             longClick: [{
                 title: des,
