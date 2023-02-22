@@ -101,7 +101,7 @@ function Version() {
         downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
         for (var i = 1; i < 344; i++) {
-            downloadFile(version.icon + i + ".png", version.localhost + "src" + i + ".png")
+            downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
         }
     }
 }
