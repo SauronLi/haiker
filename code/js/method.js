@@ -30,37 +30,37 @@ function search(search){
 
 function shezhi(){
     var d = [];
-    // d.push({
-    //     title: "<b><small>功能</small></b>",
-    //     url: "hiker://empty",
-    //     col_type: "avatar",
-    //     img: version.localhost + "src/94.png",
-    // });
-    // let ur = version.localhost+"src/svg/";
-    // let name = "更新设置";
-    // let des = "开启后，每次下拉首页即可更新。";
-    // d.push({
-    //     title: "<b>" + name + "</b>",
-    //     url: $("#noLoading#").lazyRule((arrary) => {
-    //         if (getItem(arrary, arrary == "genxin" ? "on" : "off") == "on") {
-    //             setItem(arrary, "off");
-    //         } else {
-    //             setItem(arrary, "on");
-    //         }
-    //         refreshPage(false);
-    //         return "hiker://empty";
-    //     }, arrary),
-    //     img: getItem(arrary, arrary == "genxin" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
-    //     col_type: "text_icon",
-    //     extra: {
-    //         longClick: [{
-    //             title: des,
-    //             js: $.toString((des) => {
-    //                 return "toast://" + des;
-    //             }, des)
-    //         }]
-    //     }
-    // });
+    d.push({
+        title: "<b><small>功能</small></b>",
+        url: "hiker://empty",
+        col_type: "avatar",
+        img: version.localhost + "src/94.png",
+    });
+    let ur = version.localhost+"src/svg/";
+    let name = "更新设置";
+    let des = "开启后，每次下拉首页即可更新。";
+    d.push({
+        title: "<b>" + name + "</b>",
+        url: $("#noLoading#").lazyRule((arrary) => {
+            if (getItem(arrary, arrary == "genxin" ? "on" : "off") == "on") {
+                setItem(arrary, "off");
+            } else {
+                setItem(arrary, "on");
+            }
+            refreshPage(false);
+            return "hiker://empty";
+        }, arrary),
+        img: getItem(arrary, arrary == "genxin" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+        col_type: "text_icon",
+        extra: {
+            longClick: [{
+                title: des,
+                js: $.toString((des) => {
+                    return "toast://" + des;
+                }, des)
+            }]
+        }
+    });
     d.push({
         col_type: "line"
     })
