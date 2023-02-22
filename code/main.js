@@ -26,6 +26,7 @@ var yijimenu = [{
 
 
 function yiji() {
+    Version()
     let d = [];
     if (MY_PAGE == 1) {
         for (var i in yijimenu) {
@@ -93,6 +94,10 @@ function manhua() {
 }
 
 function Version() {
+    var nowVersion = "0.0.1";//现在版本
+    var nowtime = Date.now();
+    log(nowtime);
+
 
 }
 
