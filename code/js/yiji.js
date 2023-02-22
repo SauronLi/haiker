@@ -6,7 +6,7 @@ function main() {
             d.push(yijimenu [i])
         }
     }
-    if (getItem(zhuye)) {
+    if (getItem(zhuye)=="on") {
         let x=yingshi();
         for (var i in x) {
             d.push(x[i])
