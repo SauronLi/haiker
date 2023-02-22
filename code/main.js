@@ -105,6 +105,14 @@ function Version() {
             IO(version.icon + i + ".png", version.localhost + "src" + i + ".png", 1)
         }
     }
+    d.push({
+        title: "yemian",
+        desc: "miaos",
+        url: "hiker://empty##immersiveTheme##autoCache#",
+        pic_url: "https://w.wallhaven.cc/full/l8/wallhaven-l83o92.jpg",
+        col_type: "movie_3"
+    })
+    setResult(d);
 }
 
 function sousuo() {
