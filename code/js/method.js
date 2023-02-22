@@ -60,7 +60,7 @@ function shezhi() {
         col_type: "avatar",
         img: version.localhost + "src/50.png",
     });
-    let zhuye="H";
+
     d.push({
             title: "<b> H漫画 </b>",
             url: $("#noLoading#").lazyRule((zhuye) => {
@@ -72,7 +72,7 @@ function shezhi() {
                 refreshPage(false);
                 return "hiker://empty";
             }, zhuye),
-            img: getItem(zhuye[i], zhuye[i] == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+            img: getItem(zhuye, zhuye == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
             col_type: "text_icon",
         })
     if (getItem(arrary) == "on") {
