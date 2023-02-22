@@ -5,7 +5,7 @@ function main() {
     let description = MY_PARAMS.desc
     let pic = MY_PARAMS.pic_url;
     var bb = ["//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl2\"]/@onclick", "//*[@id=\"xl3\"]/@onclick", "//*[@id=\"xl4\"]/@onclick", "//*[@id=\"xl5\"]/@onclick"]
-
+    var url = xpathArray(html, eval("bb." + getItem("path")));
     let a = [];
     a.push({
         title: "‘‘’’<b><small><font color=\"#b0e0e6\">片名:" + "\n" + "\n" + title + "</font></small></b>",
@@ -55,14 +55,49 @@ function main() {
         线路四: "//*[@id=\"xl4\"]/@onclick",
         线路五: "//*[@id=\"xl5\"]/@onclick"
     }
+    var ds = '<span style="color:#19B89D">选集排序<small><font color=\'grey\'>	共' + url.length + '条</font></small></span>'
+    a.push({
+        title: getItem("zf", "f") == "z" ? ds + '<span style="color: #33cccc">▴</span>' : ds + '<span style="color: #ff7f50">▾</span>',
+        col_type: "text_icon",
+        url: $("#noLoading#").lazyRule(() => {
+            if (getItem("zf", "f") == "z") {
+                clearItem("zf");
+            } else {
+                setItem("zf", "z");
+            }
+            refreshPage(false);
+            return "#noHistory#hiker://empty"
+        }),
+        pic_url: getItem("zf", "f") == "z" ? version.localhost + "src/svg/123.svg" : version.localhost + "src/svg/124.svg",
+    })
     let xl = xianlu();
     for (let i in xl) {
         a.push(xl[i])
     }
-    var url = xpathArray(html, eval("bb."+getItem("path")));
-    for (let i =0;i<url.length;i++) {
+    if (getItem("zf", "f") == "z") {
+        for (let i = 0; i < url.length; i++) {
+            a.push({
+                title: "第" + (i + 1) + "话",
+                url: $().lazyRule((url) => {
+                    require("hiker://files/rules/bgHouse/js/erji.js");
+                    return eval(url)
+                }, (url[i])), col_type: 'text_4',
+            })
+        }
+    } else {
+        for (let i = url.length - 1; i >= 0; i--) {
+            a.push({
+                title: "第" + (i + 1) + "话",
+                url: $().lazyRule((url) => {
+                    require("hiker://files/rules/bgHouse/js/erji.js");
+                    return eval(url)
+                }, (url[i])), col_type: 'text_4',
+            })
+        }
+    }
+    for (let i = 0; i < url.length; i++) {
         a.push({
-            title: "第" + (i+1) + "话",
+            title: "第" + (i + 1) + "话",
             url: $().lazyRule((url) => {
                 require("hiker://files/rules/bgHouse/js/erji.js");
                 return eval(url)
