@@ -69,6 +69,11 @@ function main() {
             }, (url[i])), col_type: 'text_4',
         })
     }
+    d.push({
+        desc: "‘‘’’<small><font color=#f20c00>此规则仅限学习交流使用，请于导入后24小时内删除，任何团体或个人不得以任何方式方法传播此规则的整体或部分！</font></small>",
+        url: "toast://温馨提示：且用且珍惜！",
+        col_type: 'text_center_1',
+    })
     setResult(a);
 }
 
@@ -106,6 +111,15 @@ function xianlu() {
             col_type: 'line'
         })
         d.push({
+            col_type: "big_blank_block"
+        })
+        d.push({
+            col_type: "line_blank"
+        })
+        d.push({
+            col_type: "big_blank_block"
+        })
+        d.push({
             title: '‘‘’’<small><b><font color="#33cccc">线路 : </font></b></small>',
             url: "hiker://empty",
             col_type: "scroll_button"
@@ -113,7 +127,7 @@ function xianlu() {
         var aa = ["线路一", "线路二", "线路三", "线路四", "线路五"];
         for (var i in aa) {
             d.push({
-                title: getItem('path') == aa[i] ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
+                title: getItem('path') == aa[i] ? '““””<b><span style="color: #33cccc">' + aa[i] + '↓</span></b>' : '““””<b><span >' + aa[i] + '</span></b>',
                 url: $("#noLoading#").lazyRule((aa) => {
                     if (getItem('path') != aa) {
                         setItem('path', aa);
