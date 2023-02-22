@@ -45,9 +45,8 @@ function main() {
         a.push({
             title: "第" + (i + 1) + "话",
             url: $(url).lazyRule((url) => {
-                require(version.localhost + "js/erji.js");
-                eval(url)
-                return sanji(input)
+                require("hiker://files/rules/bgHouse/js/erji.js");
+                return eval(url)
             }, (url[i])), col_type: 'text_4',
         })
     }
