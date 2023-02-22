@@ -61,8 +61,6 @@ function shezhi(){
             }]
         }
     });
-
-
     d.push({
         col_type: "line"
     })
