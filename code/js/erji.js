@@ -48,13 +48,18 @@ function main() {
         pic_url: version.icon + "195.png",
         col_type: "icon_small_3",
     })
-    var bb = ["//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl2\"]/@onclick", "//*[@id=\"xl3\"]/@onclick", "//*[@id=\"xl4\"]/@onclick", "//*[@id=\"xl5\"]/@onclick"]
+    var bb = {
+        线路一: "//*[@id=\"xl1\"]/@onclick",
+        线路二: "//*[@id=\"xl2\"]/@onclick",
+        线路三: "//*[@id=\"xl3\"]/@onclick",
+        线路四: "//*[@id=\"xl4\"]/@onclick",
+        线路五: "//*[@id=\"xl5\"]/@onclick"
+    }
     let xl = xianlu();
     for (let i in xl) {
         a.push(xl[i])
     }
-    log(getItem("path"))
-    var url = xpathArray(html, bb[getItem("path")]);
+    var url = xpathArray(html, bb.getItem("path"));
     for (let i in url) {
         a.push({
             title: "第" + (i + 1) + "话",
@@ -108,14 +113,14 @@ function xianlu() {
         var aa = ["线路一", "线路二", "线路三", "线路四", "线路五"];
         for (var i in aa) {
             d.push({
-                title: getItem('path') == i ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
-                url: $("#noLoading#").lazyRule(() => {
-                    if (getItem('path') != i) {
-                        setItem('path', i);
+                title: getItem('path') == aa[i] ? '““””<b><span style="color: #cb5656">' + aa[i] + '</span></b>' : '““””<b><span style="color: #00FFFF">' + aa[i] + '</span></b>',
+                url: $("#noLoading#").lazyRule((aa) => {
+                    if (getItem('path') != aa) {
+                        setItem('path', aa);
                     }
                     refreshPage(false);
                     return 'toast://切换路线成功'
-                }),
+                }, (aa[i])),
                 col_type: "scroll_button"
             });
         }
