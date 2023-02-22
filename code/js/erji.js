@@ -51,8 +51,9 @@ function main() {
     var bb = ["//*[@id=\"xl1\"]/@onclick", "//*[@id=\"xl2\"]/@onclick", "//*[@id=\"xl3\"]/@onclick", "//*[@id=\"xl4\"]/@onclick", "//*[@id=\"xl5\"]/@onclick"]
     let xl = xianlu();
     for (let i in xl) {
-        d.push(xl[i])
+        a.push(xl[i])
     }
+    log(bb[getItem("path")])
     var url = xpathArray(html, bb[getItem("path")]);
     for (let i in url) {
         a.push({
