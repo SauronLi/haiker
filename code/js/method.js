@@ -97,8 +97,8 @@ function shezhi(){
             }
         });
     }
-    if (ture){
+
         Version();
-    }
+
     setResult(d);
 }
