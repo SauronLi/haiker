@@ -35,7 +35,7 @@ function yingshi() {
                 pic_url: pic[i],
                 extra: {
                     title: tit[i],
-                    url: url[i],
+                    url: local+url[i].replace(/window\.open\(\'|\'\)/g, ""),
                     desc: des[i],
                     pic_url: pic[i],
                 },

@@ -1,11 +1,10 @@
-
-
 function main() {
-    var html = getResCode()
-    let title = xpath(html, "//*[@id=\"book\"]/div[1]/h1/text()")
-    let description = xpath(html, "//*[@id=\"book\"]/div[1]/p[4]/text()")
-    let pic = xpath(html, "//*[@id=\"book\"]/div[1]/p[1]/img/@src")
-    var url = xpathArray(html, "//*[@class=\"cell-title\"]/text()");
+    let url_1 = MY_PARAMS.url;
+    var html = fetch(url_1);
+    let title = MY_PARAMS.title;
+    let description = MY_PARAMS.desc
+    let pic = MY_PARAMS.pic_url;
+
     let a = [];
     a.push({
         title: "‘‘’’<b><small><font color=\"#b0e0e6\">片名" + title + "</font></small></b>",
@@ -41,6 +40,7 @@ function main() {
         pic_url: version.icon + "195.png",
         col_type: "icon_small_3",
     })
+    var url = xpathArray(html, "//*[@class=\"cell-title\"]/text()");
     for (let i in url) {
         a.push({
             title: "第" + (i + 1) + "话",
@@ -48,11 +48,12 @@ function main() {
                 require(version.localhost + "js/erji.js");
                 eval(url)
                 return sanji(input)
-            },(url[i])), col_type: 'text_4',
+            }, (url[i])), col_type: 'text_4',
         })
     }
     setResult(a);
 }
+
 function openMH(bookid, linkid, path) {
     var localhost = 'https://www.mhdnf.xyz'
     eval(getCryptoJS());
