@@ -82,7 +82,6 @@ function manhua() {
 
 function Version() {
     if (fileExist(version.localhost + "src/343.png")) {
-        log("图片依赖已准备")
     } else {
         for (var i = 1; i < 344; i++) {
             if (!fileExist(version.localhost + "src/" + i + ".png")) {
@@ -90,7 +89,7 @@ function Version() {
             }
         }
     }
-    if (fileExist(version.localhost + "src/svg/343.svg")) {
+    if (fileExist(version.localhost + "src/svg/185.svg")) {
         log("图片依赖已准备")
     } else {
         for (var i = 1; i < 186; i++) {
