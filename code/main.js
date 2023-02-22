@@ -98,6 +98,6 @@ function sousuo() {
 }
 
 function shezi() {
-    require(version.localhost + "js/method.js");
+    require(version.url + "js/method.js");
     shezhi();
 }
