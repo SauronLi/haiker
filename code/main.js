@@ -94,15 +94,23 @@ function manhua() {
 }
 
 function Version() {
-    if (fileExist(version.localhost + "js/method.js")) {
+    if (fileExist(version.localhost + "src/343.png")) {
         log("依赖已准备")
     } else {
-        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-        for (var i = 1; i < 344; i++) {
-            downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
+        if (!fileExist(version.localhost + "js/method.js")) {
+            downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
         }
+        if (!fileExist(version.localhost + "js/yiji.js")) {
+            downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+        }
+        if (!fileExist(version.localhost + "js/erji.js")) {
+            downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+        }
+        for (var i = 1; i < 344; i++) {
+            if (!fileExist(version.icon + i + ".png", version.localhost + "src/" + i + ".png")) {
+                downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
+            }
+             }
     }
 }
 
