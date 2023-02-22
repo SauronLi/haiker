@@ -8,8 +8,8 @@ function Version() {
     }
     if (!fileExist(version.localhost + "src/svg/185.svg")) {
         for (var i = 1; i < 186; i++) {
-            if (!fileExist( version.localhost + "src/svg/" + i + ".png")) {
-                downloadFile("https://lanmeiguojiang.com/tubiao/messy/"+ i + ".svg", version.localhost + "src/svg/" + i + ".svg")
+            if (!fileExist(version.localhost + "src/svg/" + i + ".png")) {
+                downloadFile("https://lanmeiguojiang.com/tubiao/messy/" + i + ".svg", version.localhost + "src/svg/" + i + ".svg")
             }
         }
         log("图片已经准备")
@@ -23,12 +23,12 @@ function Version() {
     log("更新成功")
 }//版本更新
 
-function search(search){
+function search(search) {
     fetch(url);
 }
 
 
-function shezhi(){
+function shezhi() {
     var d = [];
     d.push({
         title: "<b><small>功能</small></b>",
@@ -36,9 +36,8 @@ function shezhi(){
         col_type: "avatar",
         img: version.localhost + "src/94.png",
     });
-    let ur = version.localhost+"src/svg/";
+    let ur = version.localhost + "src/svg/";
     let name = "更新设置";
-    let des = "开启后，每次下拉首页即可更新。";
     d.push({
         title: "<b>" + name + "</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
@@ -52,14 +51,6 @@ function shezhi(){
         }, arrary),
         img: getItem(arrary, arrary == "genxin" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
         col_type: "text_icon",
-        extra: {
-            longClick: [{
-                title: des,
-                js: $.toString((des) => {
-                    return "toast://" + des;
-                }, des)
-            }]
-        }
     });
     d.push({
         col_type: "line"
@@ -70,12 +61,9 @@ function shezhi(){
         col_type: "avatar",
         img: version.localhost + "src/50.png",
     });
-    let jiekou=["h","s"]
-    let zhuye = ["H1","S1"];
-    let jiekounames=["h","s"];
-    for (let i in zhuye)  {
-        d.push({
-            title: "<b>" + jiekou[i] + "</b>",
+
+    d.push({
+            title: "<b>" + H漫画 + "</b>",
             url: $("#noLoading#").lazyRule((zhuye) => {
                 if (getItem(zhuye, zhuye == "H" ? "on" : "off") == "on") {
                     setItem(zhuye, "off");
@@ -84,28 +72,17 @@ function shezhi(){
                 }
                 refreshPage(false);
                 return "hiker://empty";
-            }, zhuye[i]),
+            }, zhuye),
             img: getItem(zhuye[i], zhuye[i] == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
             col_type: "text_icon",
-            extra: {
-                longClick: [{
-                    title: jiekounames[i],
-                    js: $.toString((des) => {
-                        return "toast://" + des;
-                    }, jiekounames[i])
-                }]
-            }
-        });
-    }
-    log(getItem(H1))
-    if (getItem(arrary)=="on"){
+        }
+    )
+    if (getItem(arrary) == "on") {
         Version();
     }
-    if (getItem(H1)=="on"){
-        getItem(S1,"off")
-    }
-    if (getItem(S1)=="on"){
-        getItem(H1,"off")
+
+    if (getItem(S1) == "on") {
+        getItem(H1, "off")
     }
 
     setResult(d);
