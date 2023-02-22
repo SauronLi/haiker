@@ -63,7 +63,7 @@ function main() {
     for (let i =0;i<url.length;i++) {
         a.push({
             title: "第" + (i+1) + "话",
-            url: $(url).lazyRule((url) => {
+            url: $().lazyRule((url) => {
                 require("hiker://files/rules/bgHouse/js/erji.js");
                 return eval(url)
             }, (url[i])), col_type: 'text_4',
