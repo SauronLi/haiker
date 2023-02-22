@@ -1,0 +1,40 @@
+{
+  "bookSourceComment": "bgcode\n由于存在翻页导致加载速度慢请耐心等待",
+  "bookSourceGroup": "",
+  "bookSourceName": "思路客",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://m.shuquzw.la",
+  "customOrder": 0,
+  "enabled": true,
+  "enabledCookieJar": false,
+  "enabledExplore": true,
+  "enabledReview": false,
+  "lastUpdateTime": 1677028654180,
+  "respondTime": 180000,
+  "ruleBookInfo": {
+	"coverUrl": "//body/div[2]/div[1]/div[1]/img/@src",
+	"name": ""
+  },
+  "ruleContent": {
+	"content": "//*[@id=\"nr\"]/text()",
+	"nextContentUrl": "//*[@id=\"zj\"]/section[1]/div[2]/a[3]/@href"
+  },
+  "ruleExplore": {},
+  "ruleReview": {},
+  "ruleSearch": {
+	"author": "//tr/td[3]/text()",
+	"bookList": "//body/div/div/table",
+	"bookUrl": "//tbody/tr/td/table/tbody/tr[1]/td/a/@href",
+	"checkKeyWord": "我",
+	"coverUrl": "",
+	"name": "//tbody/tr/td/table/tbody/tr[1]/td/a/font/text()"
+  },
+  "ruleToc": {
+	"chapterList": "//body/div[2]/ul[2]/li",
+	"chapterName": "//a/text()",
+	"chapterUrl": "//a/@href",
+	"nextTocUrl": "//body/div[2]/div[8]/span[3]/a/@href"
+  },
+  "searchUrl": "modules/article/search.php,{\n  \"method\": \"POST\",\n  \"body\": \"q={{key}}\"\n}",
+  "weight": 0
+}
