@@ -221,7 +221,7 @@ function main() {
         url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
         }, description),
-        pic_url: version.localhost + "src/more/10.png",
+        pic_url:   "hiker://files/rules/bgHouse/src/more/10.png",
         col_type: "icon_small_3",
         extra: {"inheritTitle": false}//不继承标题
     })
