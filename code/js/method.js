@@ -125,6 +125,7 @@ function GX() {
                 downloadFile(version.icon + "more/" + i + ".png", version.localhost + "src/more/" + i + ".png")
             }
         }
+        log("图片已经准备")
     }
     if (!fileExist(version.localhost + "src/messy/185.svg")) {
         for (var i = 1; i < 186; i++) {
@@ -172,5 +173,4 @@ function GX() {
             log("更新erji.js")
         }
     }
-    log("更新成功")
 }
