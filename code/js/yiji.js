@@ -20,7 +20,6 @@ function yingshi() {
     let a = [];
     var local = 'https://www.mhww.xyz'
     var MY_URL = " https://www.mhww.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=%E9%9F%93%E6%BC%AB&filmName=";
-    log(MY_PAGE)
     var html = fetch(MY_URL);
     let tit = xpathArray(html, '//*[@id="booklist"]/div/div/div/p/span/text()');
     var url = xpathArray(html, '//*[@id="booklist"]/div/div/@onclick');

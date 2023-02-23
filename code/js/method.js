@@ -72,7 +72,8 @@ function shezhi() {
         col_type: "text_icon",
     })
     if (getItem(arrary) == "on") {
-        Version();
+        // Version();
+        log("先不更新了我要修改源")
     }
 
     setResult(d);
