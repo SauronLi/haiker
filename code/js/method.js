@@ -1,15 +1,15 @@
 function Version() {
-    if (!fileExist(version.localhost + "src/343.png")) {
+    if (!fileExist(version.localhost + "src/more/343.png")) {
         for (var i = 1; i < 344; i++) {
             if (!fileExist(version.localhost + "src/" + i + ".png")) {
-                downloadFile(version.icon + i + ".png", version.localhost + "src/" + i + ".png")
+                downloadFile(version.icon +"more/"+ i + ".png", version.localhost + "src/more/" + i + ".png")
             }
         }
     }
-    if (!fileExist(version.localhost + "src/svg/185.svg")) {
+    if (!fileExist(version.localhost + "src/messy/185.svg")) {
         for (var i = 1; i < 186; i++) {
             if (!fileExist(version.localhost + "src/svg/" + i + ".png")) {
-                downloadFile("https://lanmeiguojiang.com/tubiao/messy/" + i + ".svg", version.localhost + "src/svg/" + i + ".svg")
+                downloadFile(version.icon +"messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
             }
         }
         log("图片已经准备")
@@ -30,9 +30,9 @@ function shezhi() {
         title: "<b><small>功能</small></b>",
         url: "hiker://empty",
         col_type: "avatar",
-        img: version.localhost + "src/94.png",
+        img: version.localhost + "src/more/94.png",
     });
-    let ur = version.localhost + "src/svg/";
+    let ur = version.localhost + "src/messy/";
     d.push({
         title: "<b>更新设置</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
@@ -54,7 +54,7 @@ function shezhi() {
         title: "<b><small>首页选择</small></b>",
         url: "hiker://empty",
         col_type: "avatar",
-        img: version.localhost + "src/50.png",
+        img: version.localhost + "src/more/50.png",
     });
 
     d.push({

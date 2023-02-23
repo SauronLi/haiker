@@ -2,23 +2,23 @@ var version = {
     author: "bgcode",
     ver: '0.0.1',
     url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/',
-    icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/icon/',
+    icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/',
     localhost: 'hiker://files/rules/bgHouse/'
 }
 var yijimenu = [{
-    title: "收藏", url: "hiker://collection", pic_url: version.icon + '37.png', col_type: 'icon_4',
+    title: "收藏", url: "hiker://collection", pic_url: version.icon + 'more/37.png', col_type: 'icon_4',
 }, {
-    title: "历史", url: "hiker://history", pic_url: version.icon + '51.png', col_type: 'icon_4',
+    title: "历史", url: "hiker://history", pic_url: version.icon + 'more/51.png', col_type: 'icon_4',
 }, {
     title: "设置", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         shezi();
-    }), pic_url: version.icon + '44.png', col_type: 'icon_4',
+    }), pic_url: version.icon + 'more/44.png', col_type: 'icon_4',
 }, {
     title: "搜索", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         sousuo();
-    }), pic_url: version.icon + '103.png', col_type: 'icon_4',
+    }), pic_url: version.icon + 'more/103.png', col_type: 'icon_4',
 }, {
     col_type: 'line'
 }]
