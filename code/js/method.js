@@ -1,5 +1,5 @@
 function Version() {
-    return "0.0.2";
+    return "0.0.1";
 }//版本更新
 
 
@@ -104,10 +104,10 @@ function search(d) {
             title: BT[i],
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
-            url: $("hiker://empty#noRecordHistory##noHistory#").rule((b) => {
-                require(version.localhost + "js/erji.js");
+            url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
+                require("hiker://files/rules/bgHouse/js/erji.js");
                 main();
-            }, b),
+            }),
             col_type: 'movie_2',
             extra: {
                 titleVisible: true,
