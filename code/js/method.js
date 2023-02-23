@@ -1,5 +1,5 @@
 function Version() {
-    return  "0.0.1";
+    return "0.0.1";
 }//版本更新
 
 
@@ -51,8 +51,7 @@ function shezhi() {
         col_type: "text_icon",
     })
     if (getItem(arrary) == "on") {
-        // Version();
-        log("先不更新了我要修改源")
+        GX();
     }
 
     setResult(d);
@@ -138,8 +137,10 @@ function GX() {
     if (!fileExist(version.localhost + "js/method.js")) {
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
     } else {
-        let a = require(version.url + "js/method.js").Version();
-        let b = require(version.localhost + "js/method.js").Version();
+        require(version.url + "js/method.js");
+        let a = Version();
+        require(version.localhost + "js/method.js")
+        let b = Version();
         if (a != b) {
             deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
             downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
@@ -148,8 +149,10 @@ function GX() {
     if (!fileExist(version.localhost + "js/yiji.js")) {
         downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
     } else {
-        let a = require(version.url + "js/yiji.js").Version();
-        let b = require(version.localhost + "js/yiji.js").Version();
+        require(version.url + "js/yiji.js");
+        let a = Version();
+        require(version.localhost + "js/yiji.js")
+        let b = Version();
         if (a != b) {
             deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
             downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
@@ -158,8 +161,10 @@ function GX() {
     if (!fileExist(version.localhost + "js/erji.js")) {
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
     } else {
-        let a = require(version.url + "js/erji.js").Version();
-        let b = require(version.localhost + "js/erji.js").Version();
+        require(version.url + "js/erji.js")
+        let a = Version();
+        require(version.localhost + "js/erji.js")
+        let b = Version();
         if (a != b) {
             deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
             downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")

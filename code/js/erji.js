@@ -183,3 +183,8 @@ function xianlu() {
     return d;
 
 }
+
+function Version() {
+    return  "0.0.1";
+}//版本更新
+
