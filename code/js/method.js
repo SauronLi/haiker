@@ -1,14 +1,14 @@
 function Version() {
     if (!fileExist(version.localhost + "src/more/343.png")) {
         for (var i = 1; i < 344; i++) {
-            if (!fileExist(version.localhost + "src/" + i + ".png")) {
+            if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
                 downloadFile(version.icon +"more/"+ i + ".png", version.localhost + "src/more/" + i + ".png")
             }
         }
     }
     if (!fileExist(version.localhost + "src/messy/185.svg")) {
         for (var i = 1; i < 186; i++) {
-            if (!fileExist(version.localhost + "src/svg/" + i + ".png")) {
+            if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
                 downloadFile(version.icon +"messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
             }
         }
