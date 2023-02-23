@@ -85,7 +85,7 @@ function sousuo1() {
     var d = [];
     var searchurl = $('').lazyRule(() => {
         var bn = input;
-        return $('hiker://empty#noRecordHistory##noHistory#').rule((bn) => {
+        return $('hiker://empty##fypage##noRecordHistory##noHistory#').rule((bn) => {
             require("hiker://files/rules/bgHouse/js/method.js");
             search(bn);
         }, bn);
