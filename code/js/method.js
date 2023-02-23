@@ -125,6 +125,7 @@ function search(d) {
 }
 
 function GX() {
+    require(config.依赖);
     if (!fileExist(version.localhost + "src/more/343.png")) {
         for (var i = 1; i < 344; i++) {
             if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
@@ -144,7 +145,7 @@ function GX() {
     if (!fileExist(version.localhost + "js/method.js")) {
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
     } else {
-        require(config.依赖);
+
 
         let a = version.mdversion;
          let b = Version();
@@ -157,7 +158,7 @@ function GX() {
     if (!fileExist(version.localhost + "js/yiji.js.js")) {
         downloadFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
     } else {
-        require(config.依赖);
+
 
         let a = version.yjversion;
         require(version.localhost + "js/yiji.js")
@@ -171,7 +172,7 @@ function GX() {
     if (!fileExist(version.localhost + "js/erji.js")) {
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
     } else {
-        require(config.依赖);
+
 
         let a = version.ejversion;
         require(version.localhost + "js/erji.js")
