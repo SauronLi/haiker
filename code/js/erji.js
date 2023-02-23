@@ -32,7 +32,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: version.icon + "more/67.png",
+        pic_url: version.localhost + "more/67.png",
         col_type: "icon_small_3",
     })
     a.push({
@@ -41,7 +41,7 @@ function main() {
         url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
         }, description),
-        pic_url: version.icon + "more/10.png",
+        pic_url: version.localhost + "more/10.png",
         col_type: "icon_small_3",
         extra: {"inheritTitle": false}//不继承标题
     })
@@ -52,7 +52,7 @@ function main() {
             require(version.localhost + "method.js");
             sousuo();
         }),
-        pic_url: version.icon + "more/195.png",
+        pic_url: version.localhost + "more/195.png",
         col_type: "icon_small_3",
     })
 

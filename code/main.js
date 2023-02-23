@@ -6,19 +6,19 @@ var version = {
     localhost: 'hiker://files/rules/bgHouse/'
 }
 var yijimenu = [{
-    title: "收藏", url: "hiker://collection", pic_url: version.icon + 'more/37.png', col_type: 'icon_4',
+    title: "收藏", url: "hiker://collection", pic_url: version.localhost + 'more/37.png', col_type: 'icon_4',
 }, {
-    title: "历史", url: "hiker://history", pic_url: version.icon + 'more/51.png', col_type: 'icon_4',
+    title: "历史", url: "hiker://history", pic_url: version.localhost + 'more/51.png', col_type: 'icon_4',
 }, {
     title: "设置", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         shezi();
-    }), pic_url: version.icon + 'more/44.png', col_type: 'icon_4',
+    }), pic_url: version.localhost + 'more/44.png', col_type: 'icon_4',
 }, {
     title: "搜索", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         sousuo();
-    }), pic_url: version.icon + 'more/103.png', col_type: 'icon_4',
+    }), pic_url: version.localhost + 'more/103.png', col_type: 'icon_4',
 }, {
     col_type: 'line'
 }]
