@@ -212,7 +212,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: version.localhost + "src/more/67.png",
+        pic_url: "hiker://files/rules/bgHouse/src/more/67.png",
         col_type: "icon_small_3",
     })
     a.push({
@@ -229,10 +229,10 @@ function main() {
         title: "搜索",
         desc: "",
         url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
-            require(version.localhost + "method.js");
+            require("hiker://files/rules/bgHouse/method.js");
             sousuo();
         }),
-        pic_url: version.localhost + "src/more/195.png",
+        pic_url: "hiker://files/rules/bgHouse/src/more/195.png",
         col_type: "icon_small_3",
     })
 
@@ -249,7 +249,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: getItem("zf", "f") == "z" ? version.localhost + "src/messy/123.svg" : version.localhost + "src/messy/124.svg",
+        pic_url: getItem("zf", "f") == "z" ? "hiker://files/rules/bgHouse/src/messy/123.svg" : "hiker://files/rules/bgHouse/src/messy/124.svg",
     })
     for (let i in xl) {
         a.push(xl[i])
@@ -295,33 +295,6 @@ function main() {
     })
     setResult(a);
 }
-
-function openMH(bookid, linkid, path) {
-    var localhost = 'https://www.mhdnf.xyz'
-    eval(getCryptoJS());
-    const j = CryptoJS.enc.Utf8.parse('12cdefgabcdefg12');
-    let j1 = CryptoJS.enc.Utf8.parse(linkid);
-    let jg = CryptoJS.AES.encrypt(j1, j, {
-        'mode': CryptoJS.mode.ECB, 'padding': CryptoJS.pad.Pkcs7
-    });
-    let url = localhost + '/play?linkId=' + linkid + '&bookId=' + bookid + "&path=" + path + '&key=' + jg.toString()
-    var html = fetch(url)
-    var xx = xpathArray(html, "//*[@id=\"imgList\"]/img/@src");
-    var BT = xpathArray(html, "//*[@id=\"imgList\"]/img/@data-original");
-    var ll = "pics://"
-    for (var i = 0; i < 3; i++) {
-        ll = ll + xx[i] + '&&'
-    }
-    for (var i = 0; i < BT.length; i++) {
-        if (i == BT.length - 1) {
-            ll = ll + BT[i]
-        } else {
-            ll = ll + BT[i] + '&&'
-        }
-    }
-    return ll
-}
-
 
 function xianlu() {
     var d = [];
