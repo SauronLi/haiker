@@ -1,5 +1,5 @@
 function Version() {
-    return "0.0.1";
+    return "0.0.2";
 }//版本更新
 
 
@@ -105,12 +105,17 @@ function search(d) {
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
             url: $("hiker://empty#noRecordHistory##noHistory#").rule((b) => {
-                log("b")
+                require(version.localhost + "js/erji.js");
+                main();
             }, b),
             col_type: 'movie_2',
             extra: {
                 titleVisible: true,
-                title: BT[i]
+                title: BT[i],
+                url: b,
+                desc: XQ[i].replace("\r\n", ""),
+                pic_url: TP[i],
+
             }
         });
 
@@ -147,16 +152,16 @@ function GX() {
             log("更新method.js")
         }
     }
-    if (!fileExist(version.localhost + "js/yiji.js")) {
-        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+    if (!fileExist(version.localhost + "js/yiji.js.js")) {
+        downloadFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
     } else {
 
         let a = version.yjversion;
-        require(version.localhost + "js/yiji.js")
+        require(version.localhost + "js/yiji.js.js")
         let b = Version();
         if (a != b) {
-            deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-            downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+            deleteFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
+            downloadFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
             log("更新yiji.js")
         }
     }
