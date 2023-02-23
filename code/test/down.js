@@ -19,12 +19,8 @@ function yiji() {
         log(i)
     }
     var a=[]
-    require(config.依赖)
-    let sdda=Version();
-    require("hiker://files/rules/bgHouse/js/method.js")
-    let sd2a= Version();
     a.push({
-        title: 'Download'+sdda+sd2a,
+        title: 'Download',
         col_type: 'movie_3',
 
     })
