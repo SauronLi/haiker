@@ -1,5 +1,5 @@
 function Version() {
-    return "0.0.1";
+    return "0.0.2";
 }//版本更新
 
 
@@ -105,8 +105,9 @@ function search(d) {
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
             url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
-                require("hiker://files/rules/bgHouse/js/erji.js");
-                main();
+                // require("hiker://files/rules/bgHouse/js/erji.js");
+                // main();
+                log("zhanshi")
             }),
             col_type: 'movie_2',
             extra: {
