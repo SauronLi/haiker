@@ -19,7 +19,8 @@ function yiji() {
         log(i)
     }
     var a=[]
-    let sdda=require(config.依赖).Version();
+    require(config.依赖)
+    let sdda=Version();
     a.push({
         title: 'Download'+sdda,
         col_type: 'movie_3',
