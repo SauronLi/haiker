@@ -90,8 +90,7 @@ function sousuo1() {
 function search(d) {
     var x = [];
     var local = "https://www.mhdnf.xyz"
-    var localhost = "https://www.mhdnf.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName="
-    var url = localhost + d;
+    var url = "https://www.mhdnf.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName="+ d;
     var html = fetch(url)
     var BT = xpathArray(html, '//*[@id="booklist"]/div/div/div/p/span/text()');
     var LJ = xpathArray(html, '//*[@id="booklist"]/div/div/@onclick');
@@ -104,7 +103,7 @@ function search(d) {
             title: BT[i],
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
-            url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
+            url: $("hiker://empty##noRecordHistory##noHistory#").rule(() => {
                 require("hiker://files/rules/bgHouse/js/method.js");
                 main();
             }),
