@@ -1,3 +1,8 @@
+
+function Version() {
+    return  "0.0.1";
+}//版本更新
+
 function main() {
     let d = [];
 
@@ -44,7 +49,3 @@ function yingshi() {
     }
     return a;
 }
-
-function Version() {
-    return  "0.0.1";
-}//版本更新

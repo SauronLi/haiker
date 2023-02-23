@@ -1,3 +1,7 @@
+function Version() {
+    return  "0.0.1";
+}//版本更新
+
 function main() {
     let url_1 = MY_PARAMS.url;
     var html = fetch(url_1);
@@ -184,7 +188,4 @@ function xianlu() {
 
 }
 
-function Version() {
-    return  "0.0.1";
-}//版本更新
 
