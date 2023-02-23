@@ -19,10 +19,17 @@ function yiji() {
         log(i)
     }
     var a=[]
+    let sdda=require(config.依赖).Version();
     a.push({
-        title: 'Download',
+        title: 'Download'+sdda,
         col_type: 'movie_3',
 
     })
+
     setResult(a);
 }
+
+function Version() {
+    return  "0.0.1";
+}//版本更新
+

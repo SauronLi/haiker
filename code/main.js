@@ -1,6 +1,6 @@
 var version = {
     author: "bgcode",
-    ver: '0.0.1',
+    ver: '0.0.2',
     url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/',
     icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/',
     localhost: 'hiker://files/rules/bgHouse/'
@@ -29,19 +29,15 @@ function yiji() {
     require(version.localhost + "js/yiji.js")
     main();
 }
-
-
 function erji() {
     require(version.localhost + "js/erji.js")
     main();
 }
-
 function sousuo() {
     require(version.localhost + "js/method.js")
     sousuo1();
 
 }
-
 function shezi() {
     require(version.localhost + "js/method.js");
     // require(version.url + "/test/learn/she.js");

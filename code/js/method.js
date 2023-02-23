@@ -1,26 +1,5 @@
 function Version() {
-    if (!fileExist(version.localhost + "src/more/343.png")) {
-        for (var i = 1; i < 344; i++) {
-            if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
-                downloadFile(version.icon +"more/"+ i + ".png", version.localhost + "src/more/" + i + ".png")
-            }
-        }
-    }
-    if (!fileExist(version.localhost + "src/messy/185.svg")) {
-        for (var i = 1; i < 186; i++) {
-            if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
-                downloadFile(version.icon +"messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
-            }
-        }
-        log("图片已经准备")
-    }
-    deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
-    downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-    deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-    downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-    deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-    downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-    log("更新成功")
+    return  "0.0.1";
 }//版本更新
 
 
@@ -138,4 +117,53 @@ function search(d) {
 
     }
     setResult(x);
+}
+
+function GX() {
+    if (!fileExist(version.localhost + "src/more/343.png")) {
+        for (var i = 1; i < 344; i++) {
+            if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
+                downloadFile(version.icon + "more/" + i + ".png", version.localhost + "src/more/" + i + ".png")
+            }
+        }
+    }
+    if (!fileExist(version.localhost + "src/messy/185.svg")) {
+        for (var i = 1; i < 186; i++) {
+            if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
+                downloadFile(version.icon + "messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
+            }
+        }
+        log("图片已经准备")
+    }
+    if (!fileExist(version.localhost + "js/method.js")) {
+        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
+    } else {
+        let a = require(version.url + "js/method.js").Version();
+        let b = require(version.localhost + "js/method.js").Version();
+        if (a != b) {
+            deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
+            downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
+        }
+    }
+    if (!fileExist(version.localhost + "js/yiji.js")) {
+        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+    } else {
+        let a = require(version.url + "js/yiji.js").Version();
+        let b = require(version.localhost + "js/yiji.js").Version();
+        if (a != b) {
+            deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+            downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+        }
+    }
+    if (!fileExist(version.localhost + "js/erji.js")) {
+        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+    } else {
+        let a = require(version.url + "js/erji.js").Version();
+        let b = require(version.localhost + "js/erji.js").Version();
+        if (a != b) {
+            deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+            downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+        }
+    }
+    log("更新成功")
 }
