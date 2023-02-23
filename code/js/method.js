@@ -145,42 +145,38 @@ function GX() {
     if (!fileExist(version.localhost + "js/method.js")) {
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
     } else {
-
-
-        let a = version.mdversion;
-         let b = Version();
-        if (a != b) {
+        // let a = version.mdversion;
+        //  let b = Version();
+        // if (a != b) {
             deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
             downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
             log("更新method.js")
-        }
+        // }
     }
     if (!fileExist(version.localhost + "js/yiji.js.js")) {
         downloadFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
     } else {
-
-
-        let a = version.yjversion;
-        require(version.localhost + "js/yiji.js")
-        let b = Version();
-        if (a != b) {
+        // let a = version.yjversion;
+        // require(version.localhost + "js/yiji.js")
+        // let b = Version();
+        // if (a != b) {
             deleteFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
             downloadFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
             log("更新yiji.js")
-        }
+        // }
     }
     if (!fileExist(version.localhost + "js/erji.js")) {
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
     } else {
 
 
-        let a = version.ejversion;
-        require(version.localhost + "js/erji.js")
-        let b = Version();
-        if (a != b) {
+        // let a = version.ejversion;
+        // require(version.localhost + "js/erji.js")
+        // let b = Version();
+        // if (a != b) {
             deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
             downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
             log("更新erji.js")
-        }
+        // }
     }
 }
