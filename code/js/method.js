@@ -144,9 +144,10 @@ function GX() {
     if (!fileExist(version.localhost + "js/method.js")) {
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
     } else {
+        require(config.依赖);
+
         let a = version.mdversion;
-        require(version.localhost + "js/method.js")
-        let b = Version();
+         let b = Version();
         if (a != b) {
             deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
             downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
@@ -156,9 +157,10 @@ function GX() {
     if (!fileExist(version.localhost + "js/yiji.js.js")) {
         downloadFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
     } else {
+        require(config.依赖);
 
         let a = version.yjversion;
-        require(version.localhost + "js/yiji.js.js")
+        require(version.localhost + "js/yiji.js")
         let b = Version();
         if (a != b) {
             deleteFile(version.url + "js/yiji.js.js", version.localhost + "js/yiji.js.js")
@@ -169,6 +171,7 @@ function GX() {
     if (!fileExist(version.localhost + "js/erji.js")) {
         downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
     } else {
+        require(config.依赖);
 
         let a = version.ejversion;
         require(version.localhost + "js/erji.js")
