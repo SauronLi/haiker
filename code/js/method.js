@@ -144,6 +144,7 @@ function GX() {
         if (a != b) {
             deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
             downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
+            log("更新method.js")
         }
     }
     if (!fileExist(version.localhost + "js/yiji.js")) {
@@ -156,6 +157,7 @@ function GX() {
         if (a != b) {
             deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
             downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+            log("更新yiji.js")
         }
     }
     if (!fileExist(version.localhost + "js/erji.js")) {
@@ -168,6 +170,7 @@ function GX() {
         if (a != b) {
             deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
             downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+            log("更新erji.js")
         }
     }
     log("更新成功")
