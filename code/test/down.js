@@ -9,7 +9,7 @@ function yiji() {
     var a = []
     let b = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
     for (let i in b) {
-        d.push({
+        a.push({
             title: b[i] === getVar('icon', '影视') ? b[i] : b[i],
             url: $().lazyRule((name, key) => {
                 putVar('icon', name);
@@ -28,7 +28,7 @@ function yiji() {
     function url(a) {
         num = parseInt(b[a]);
         type = c[a];
-        url_icon = d[a]
+        url_icon = d[a];
     }
 
     switch (getVar('icon', '系统')) {
@@ -84,8 +84,8 @@ function Version() {
 
 function download() {
     for (let i = 0; i < b.length; i++) {
-        var num = parseInt(b[i]);
-        for (let j = 1; j < num + 1; j++) {
+        var x = parseInt(b[i]);
+        for (let j = 1; j < x + 1; j++) {
             let url1 = url + c[i] + j + d[i];
             let pic = localhost + c[i] + j + d[i];
             try {
