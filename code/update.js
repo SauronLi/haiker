@@ -23,7 +23,7 @@ function password() {
         setResult(d)
         return false;
     } else {
-        let a = JSON.parse(fetch(Path))
+        let a = JSON.parse(fetch(path))
         if (a[0].key == password) {
             return true;
         }
