@@ -23,44 +23,28 @@ function yiji() {
     }
     switch (getVar('icon', '系统')) {
         case "系统":
-            num = parseInt(b[0]);
-            type = c[0];
-            url_icon = d[0];
+            diplay(0)
             break;
         case"影视":
-            num = parseInt(b[1]);
-            type = c[1];
-            url_icon = d[1];
+            diplay(1)
             break;
         case"2D":
-            num = parseInt(b[2]);
-            type = c[2];
-            url_icon = d[2];
+            diplay(2)
             break;
         case"音乐":
-            num = parseInt(b[3]);
-            type = c[3];
-            url_icon = d[3];
+            diplay(3)
             break;
         case"Q版":
-            num = parseInt(b[4]);
-            type = c[4];
-            url_icon = d[4];
+            diplay(4)
             break;
         case"可爱":
-            num = parseInt(b[5]);
-            type = c[5];
-            url_icon = d[5];
+            diplay(5)
             break;
         case"更多":
-            num = parseInt(b[6]);
-            type = c[6];
-            url_icon = d[6];
+            diplay(6)
             break;
         case"其他":
-            num = parseInt(b[7]);
-            type = c[7];
-            url_icon = d[7];
+            diplay(7)
             break;
     }
 
@@ -86,7 +70,11 @@ function yiji() {
 function Version() {
     return "0.0.1";
 }//版本更新
-
+function diplay(a){
+    num = parseInt(b[a]);
+    type = c[a];
+    url_icon = d[a];
+}
 function download() {
     for (let i = 2; i < b.length; i++) {
         var x = parseInt(b[i]);
