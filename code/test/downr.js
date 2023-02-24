@@ -7,6 +7,7 @@ var num = 0;
 var type = '';
 var url_icon = '';
 function yiji() {
+    download();
     var a = []
     let namelist = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
     for (let i in namelist) {
