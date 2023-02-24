@@ -65,5 +65,5 @@ function js(id) {
         'mode': CryptoJS.mode.ECB, 'padding': CryptoJS.pad.Pkcs7
     });
     let url = jg.toString()
-    return ll
+    return url
 }
