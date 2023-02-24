@@ -10,7 +10,9 @@ function password() {
             col_type: 'text_3',
             url: $('密码').input((psd,filePath) => {
                 if (psd == input) {
-                    let b={key: input}
+                    require(config.依赖)
+                   let x=js(input)
+                    let b={key: x}
                     var c =[];
                     c.push(b)
                     writeFile(filePath, JSON.stringify(c));
@@ -25,7 +27,7 @@ function password() {
         return false;
     } else {
         let a = JSON.parse(fetch(path))
-        if (a[0].key == password) {
+        if (a[0].key == js(password)) {
             return true;
         }else {
             deleteFile(path);
