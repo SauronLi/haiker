@@ -2,11 +2,12 @@ var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
 var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
 var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
 var localhost = "hiker://files/rules/bgHouse/src/"
+var url = "https://lanmeiguojiang.com/tubiao/";
 var num = 0;
 var type = '';
 var url_icon = '';
 function yiji() {
-    // download();
+     download();
     var a = []
     let namelist = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
     for (let i in namelist) {
@@ -87,11 +88,6 @@ function Version() {
 }//版本更新
 
 function download() {
-    var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
-    var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
-    var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
-    var url = "https://lanmeiguojiang.com/tubiao/";
-    var localhost = "hiker://files/rules/bgHouse/src/"
     for (let i = 0; i < b.length; i++) {
         var x = parseInt(b[i]);
         for (let j = 1; j < x + 1; j++) {
