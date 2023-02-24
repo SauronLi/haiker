@@ -1,4 +1,10 @@
 evalPrivateJS("pXXRSyZyqQKXTF72AbMK1tD28BnuBESjXwK1VkmPFwxnkKgV5ir8V3triSICL82145e8nwipYH2+8HqyyC6gxSLBW0MHKmPy+37dnDv3bW0Cur3IvbV46aOORsvBa2lzngaa/SA4I4HYJl8Ht1FOB+4Wmr92uBL6+FiAda9Y5YxnkKgV5ir8V3triSICL821SvKS3aiWOJ4f799pz+8hvak3FS/SS1jE9TBuJtvCLZZboluWSqMBd2BVGk4PhAXQpi3V0NbTPUn+9CVf+/4Jo+2tiVfsw0sfh/O/Sxd/m9NYeEI3LY8sKiXRCS4GdJNB3CVutk9XHF9lzcIMaq77MCpNaw1X/dxtbnTjjy0qw9Fd3U3u1PM+wo+1W8u3vJiXffNAarKWhFzvmapGol1OgtjKq66odIypbE5LF/W94uxcXnDZVrBPW5kUyxFNiRF9I8P2VC/z6tLJPbig3mgyza1bMy6472DG7RMRO3BhekdPCDI+oko78oqTD/GuKaEstuXpFw7toVNr2bg66QlezJUmVzjHHyyeicO4kpw045jZXzMawlfSPk/dUq7E0rjOXu8pYvFK+rAeT2W+MqB4pmcxKybhflzts4OFpydapThsHd0W5tbboauyPZ7sRHqjluH7hiW23tjiHxFVsNz0r2p1wc/+4R08XbbvcER014Yf/ioM47cvynpe1kdtE+Ol9GnxkxRseZtRgQik779eeWBvP0fLWc2ZnTz9wrsXMM5YnTtaJQ7+sVd3i0EaCbMev6aAP9qHeqMZVMoi5XTihAk2/WUvWSAQ5BHgZOFF16JpuUnmckxsFp/lwBU+mzLchFhOI+ZjLRNosbMxof3InqkRWxMcQnaz5Cqbhs9GYru8mi9rC65yCZ4OdKMsz6iQec2/pvk/bINaLYwu3URppDW/iTYMa1G6JFaPn/YEoFjHnMN+xoWFN/qGKmQOL/s62V8zGsJX0j5P3VKuxNK4zl7vKWLxSvqwHk9lvjKgeKZnMSsm4X5c7bODhacnWqU4bB3dFubW26Grsj2e7ER6o094vDnOb2vlLsdhLkZ/an1JN2XAnxhGKXAcS+N9cdrnJT/o/fPNWpH3rGi0FKThITrwpmNBs3TV6IjjDHPWTuVV9qdqGz/LSJnFxIvQ8kBx")
 function yiji(){
-
+    var s=Encrypt("bgcode666");
+    var c=Decrypt(s);
+    var d=[];
+    d.push({
+        title:"加密",
+        col_type:"text_1"
+    })
 }
