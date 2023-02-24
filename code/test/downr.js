@@ -11,7 +11,7 @@ function yiji() {
     let namelist = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
     for (let i in namelist) {
         a.push({
-            title: namelist[i] === getVar('icon', '2D') ? "““””<b color='#00bbf0'>" + namelist[i] + "</b>" : namelist[i],
+            title: namelist[i] === getVar('icon', '2D') ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>" : namelist[i],
             url: $().lazyRule((name) => {
                 putVar('icon', name);
                 refreshPage(true);
