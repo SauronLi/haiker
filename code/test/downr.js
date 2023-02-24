@@ -1,4 +1,4 @@
-var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
+var b = ["4", "10", "321", "152", "169", "179", "343", "186"];
 var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
 var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
 var localhost = "hiker://files/rules/bgHouse/src/"
