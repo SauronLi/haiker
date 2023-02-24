@@ -7,21 +7,22 @@ function password() {
         d.push({
             title: '输入密码',
             col_type: 'text_3',
-            url: $('密码').input((password) => {
-                if (password == input) {
+            url: $('密码').input((psd,filePath) => {
+                if (psd == input) {
+                    let obj = {};
                     try {
-                        let ret = {key: input};
-                        writeFile(filePath, JSON.stringify(ret));
-                        refreshPage(false);
+                        obj = JSON.parse(input)
                     } catch (e) {
-                        'toast://保存出错'
+                        return 'toast://新增失败,JSON校验不通过:' + e.message
                     }
+                    writeFile(filePath, JSON.stringify(obj));
+                    refreshPage(false);
                     return 'toast://密码已经保存可使用'
                 } else {
                     return 'toast://密码错误请重试'
                 }
-            })
-        }, password);
+            }, password,path)
+        });
         setResult(d)
         return false;
     } else {
