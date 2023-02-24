@@ -21,7 +21,7 @@ function yiji() {
             col_type: 'scroll_button'
         })
     }
-    switch (getVar('icon', '2D')) {
+    switch (getVar('icon', '系统')) {
         case "系统":
             num = parseInt(b[0]);
             type = c[0];
