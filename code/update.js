@@ -7,7 +7,7 @@ function password() {
         d.push({
             title: '输入密码',
             col_type: 'text_3',
-            url: $('密码').input(() => {
+            url: $('密码').input((password) => {
                 if (password==input) {
                     setItem("key",input);
                     refreshPage(false);
@@ -16,7 +16,7 @@ function password() {
                     return 'toast://密码错误请重试'
                 }
             })
-        });
+        },password);
         setResult(d)
     }
 }
