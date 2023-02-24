@@ -6,7 +6,6 @@ var num = 0;
 var type = '';
 var url_icon = '';
 function yiji() {
-
     // download();
     var a = []
     let namelist = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
@@ -63,11 +62,12 @@ function yiji() {
             url_icon = d[7];
             break;
     }
+    log("sdaas")
     for (let j = 1; j < num + 1; j++) {
         try {
             let pic = localhost + type + j + url_icon;
             a.push({
-                title: j + d[i],
+                title: j + url_icon,
                 url: $("#noLoading#").lazyRule((pic) => {
                     copy(pic);
                     return "hiker://empty";
