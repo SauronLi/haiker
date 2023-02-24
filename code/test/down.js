@@ -9,46 +9,60 @@ function yiji() {
 
     // download();
     var a = []
-    let name = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
-    for (let i in name) {
+    let namelist = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
+    for (let i in namelist) {
         a.push({
-            title: name[i] === getVar('icon', '2D') ? "““””<b color='#00bbf0'>" + name[i] + "</b>" : name[i],
+            title: namelist[i] === getVar('icon', '2D') ? "““””<b color='#00bbf0'>" + namelist[i] + "</b>" : namelist[i],
             url: $().lazyRule((name) => {
                 putVar('icon', name);
                 refreshPage(true);
                 return 'hiker://empty'
-            }, name[i]),
+            }, namelist[i]),
             col_type: 'scroll_button'
-
         })
     }
     switch (getVar('icon', '2D')) {
         case "系统":
-            url(0);
+            num = parseInt(b[0]);
+            type = c[0];
+            url_icon = d[0];
             break;
         case"影视":
-            url(1);
+            num = parseInt(b[1]);
+            type = c[1];
+            url_icon = d[1];
             break;
         case"2D":
-            url(2);
+            num = parseInt(b[2]);
+            type = c[2];
+            url_icon = d[2];
             break;
         case"音乐":
-            url(3);
+            num = parseInt(b[3]);
+            type = c[3];
+            url_icon = d[3];
             break;
         case"Q版":
-            url(4);
+            num = parseInt(b[4]);
+            type = c[4];
+            url_icon = d[4];
             break;
         case"可爱":
-            url(5);
+            num = parseInt(b[5]);
+            type = c[5];
+            url_icon = d[5];
             break;
         case"更多":
-            url(6);
+            num = parseInt(b[6]);
+            type = c[6];
+            url_icon = d[6];
             break;
         case"其他":
-            url(7);
+            num = parseInt(b[7]);
+            type = c[7];
+            url_icon = d[7];
             break;
     }
-
     for (let j = 1; j < num + 1; j++) {
         try {
             let pic = localhost + type + j + url_icon;
@@ -67,11 +81,6 @@ function yiji() {
 
     }
     setResult(a);
-}
-function url(a) {
-    num = parseInt(b[a]);
-    type = c[a];
-    url_icon = d[a];
 }
 function Version() {
     return "0.0.1";
