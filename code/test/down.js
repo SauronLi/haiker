@@ -3,7 +3,7 @@ function yiji() {
     var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
     var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
     var localhost = "hiker://files/rules/bgHouse/src/"
-    download();
+    // download();
     var a = []
     let name = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
     for (let i in name) {
