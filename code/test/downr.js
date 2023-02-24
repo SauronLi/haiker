@@ -2,12 +2,11 @@ var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
 var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
 var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
 var localhost = "hiker://files/rules/bgHouse/src/"
-var url = "https://lanmeiguojiang.com/tubiao/";
+var url = "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/";
 var num = 0;
 var type = '';
 var url_icon = '';
 function yiji() {
-     download();
     var a = []
     let namelist = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
     for (let i in namelist) {
@@ -63,7 +62,7 @@ function yiji() {
             url_icon = d[7];
             break;
     }
-    log("sdaas")
+
     for (let j = 1; j < num + 1; j++) {
         try {
             let pic = localhost + type + j + url_icon;
@@ -88,7 +87,7 @@ function Version() {
 }//版本更新
 
 function download() {
-    for (let i = 0; i < b.length; i++) {
+    for (let i = 2; i < b.length; i++) {
         var x = parseInt(b[i]);
         for (let j = 1; j < x + 1; j++) {
             let url1 = url + c[i] + j + d[i];
