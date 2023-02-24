@@ -1,8 +1,12 @@
+var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
+var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
+var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
+var localhost = "hiker://files/rules/bgHouse/src/"
+var num = 0;
+var type = '';
+var url_icon = '';
 function yiji() {
-    var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
-    var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
-    var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
-    var localhost = "hiker://files/rules/bgHouse/src/"
+
     // download();
     var a = []
     let name = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
@@ -18,16 +22,6 @@ function yiji() {
 
         })
     }
-    var num = 0;
-    var type = '';
-    var url_icon = '';
-
-    function url(a) {
-        num = parseInt(b[a]);
-        type = c[a];
-        url_icon = d[a];
-    }
-
     switch (getVar('icon', '2D')) {
         case "系统":
             url(0);
@@ -74,7 +68,11 @@ function yiji() {
     }
     setResult(a);
 }
-
+function url(a) {
+    num = parseInt(b[a]);
+    type = c[a];
+    url_icon = d[a];
+}
 function Version() {
     return "0.0.1";
 }//版本更新
