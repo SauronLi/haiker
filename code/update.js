@@ -23,9 +23,10 @@ function password() {
         setResult(d)
         return false;
     } else {
-        let a = JSON.parse(path)
-        if (a.key == input) {
-            log(a.key)
+        let a = JSON.parse(fetch(Path))
+
+        if (a[0].key == input) {
+            log(a[0].key)
             return true;
         }
         return false;
