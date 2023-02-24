@@ -27,8 +27,11 @@ function password() {
         let a = JSON.parse(fetch(path))
         if (a[0].key == password) {
             return true;
+        }else {
+            deleteFile(path);
+            return false;
         }
-        return false;
+
     }
 }
 
