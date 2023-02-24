@@ -4,7 +4,7 @@ function canUse() {
     //等待分钟数
     let waitMin = 10
 
-    let min = Math.round(Math.random() * 1000 * 60 * waitMin)
+    let min = Math.round(1000 * 60 * 60*24*7)
     let unlock = new Date().getTime() + min;
     let time = getItem(key, "");
     if (time == "") {
