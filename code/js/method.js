@@ -13,7 +13,7 @@ function shezhi() {
     });
     let ur = version.localhost + "src/messy/";
     d.push({
-        title: "<b>更新设置</b>",
+        title: "<b>持续更新</b>",
         url: $("#noLoading#").lazyRule((arrary) => {
             if (getItem(arrary, arrary == "genxin" ? "on" : "off") == "on") {
                 setItem(arrary, "off");
@@ -51,6 +51,7 @@ function shezhi() {
         col_type: "text_icon",
     })
     if (getItem(arrary) == "on") {
+        require(config.依赖)
         GX();
     }
 
@@ -90,7 +91,7 @@ function sousuo1() {
 function search(d) {
     var x = [];
     var local = "https://www.mhdnf.xyz"
-    var url = "https://www.mhdnf.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName="+ d;
+    var url = "https://www.mhdnf.xyz/?page.currentPage=" + MY_PAGE + "&orderType=3&subjectName=&filmName=" + d;
     var html = fetch(url)
     var BT = xpathArray(html, '//*[@id="booklist"]/div/div/div/p/span/text()');
     var LJ = xpathArray(html, '//*[@id="booklist"]/div/div/@onclick');
@@ -120,61 +121,6 @@ function search(d) {
 
     }
     setResult(x);
-}
-
-function GX() {
-    require(config.依赖);
-    if (!fileExist(version.localhost + "src/more/343.png")) {
-        for (var i = 1; i < 344; i++) {
-            if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
-                downloadFile(version.icon + "more/" + i + ".png", version.localhost + "src/more/" + i + ".png")
-            }
-        }
-        log("图片已经准备")
-    }
-    if (!fileExist(version.localhost + "src/messy/185.svg")) {
-        for (var i = 1; i < 186; i++) {
-            if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
-                downloadFile(version.icon + "messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
-            }
-        }
-        log("图片已经准备")
-    }
-    if (!fileExist(version.localhost + "js/method.js")) {
-        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-    } else {
-        let a = version.mdversion;
-        let b = Version();
-        if (a != b) {
-            deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
-            downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
-            log("更新method.js")
-        }
-    }
-    if (!fileExist(version.localhost + "js/yiji.js")) {
-        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-    } else {
-        let a = version.yjversion;
-        require(version.localhost + "js/yiji.js")
-        let b = Version();
-        if (a != b) {
-            deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-            downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
-            log("更新yiji.js")
-        }
-    }
-    if (!fileExist(version.localhost + "js/erji.js")) {
-        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-    } else {
-        let a = version.ejversion;
-        require(version.localhost + "js/erji.js")
-        let b = Version();
-        if (a != b) {
-            deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-            downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
-            log("更新erji.js")
-        }
-    }
 }
 
 function main() {
@@ -220,7 +166,7 @@ function main() {
         url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
         }, description),
-        pic_url:   "hiker://files/rules/bgHouse/src/more/10.png",
+        pic_url: "hiker://files/rules/bgHouse/src/more/10.png",
         col_type: "icon_small_3",
         extra: {"inheritTitle": false}//不继承标题
     })

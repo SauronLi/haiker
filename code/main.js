@@ -29,6 +29,7 @@ let arrary = "genxin";
 let zhuye="H";
 let path=""
 function yiji() {
+    update()
     require(version.localhost + "js/yiji.js")
     main();
 }
@@ -43,6 +44,74 @@ function sousuo() {
 }
 function shezi() {
     require(version.localhost + "js/method.js");
-    // require(version.url + "/test/learn/she.js");
     shezhi();
+}
+
+function update() {
+    let key = "day"//修改即可重置更新时间
+    let time = new Date().getTime();//获取当前时间
+    let locktime = getItem(key, "")
+    let updatetime = time + Math.round(1000 * 60 * 60 * 24 * 7);
+    if (locktime == "") {
+        GX()
+        setItem(key, "" + updatetime)
+    }
+    if (time > locktime) {
+        GX();//更新函数
+        setItem(key, "");//重置更新时间
+    }
+}
+function GX() {
+    require(config.依赖);
+    if (!fileExist(version.localhost + "src/more/343.png")) {
+        for (var i = 1; i < 344; i++) {
+            if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
+                downloadFile(version.icon + "more/" + i + ".png", version.localhost + "src/more/" + i + ".png")
+            }
+        }
+        log("图片已经准备")
+    }
+    if (!fileExist(version.localhost + "src/messy/185.svg")) {
+        for (var i = 1; i < 186; i++) {
+            if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
+                downloadFile(version.icon + "messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
+            }
+        }
+        log("图片已经准备")
+    }
+    if (!fileExist(version.localhost + "js/method.js")) {
+        downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
+    } else {
+        let a = version.mdversion;
+        let b = Version();
+        if (a != b) {
+            deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
+            downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
+            log("更新method.js")
+        }
+    }
+    if (!fileExist(version.localhost + "js/yiji.js")) {
+        downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+    } else {
+        let a = version.yjversion;
+        require(version.localhost + "js/yiji.js")
+        let b = Version();
+        if (a != b) {
+            deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+            downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
+            log("更新yiji.js")
+        }
+    }
+    if (!fileExist(version.localhost + "js/erji.js")) {
+        downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+    } else {
+        let a = version.ejversion;
+        require(version.localhost + "js/erji.js")
+        let b = Version();
+        if (a != b) {
+            deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+            downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
+            log("更新erji.js")
+        }
+    }
 }
