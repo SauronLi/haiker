@@ -83,6 +83,7 @@ function GX() {
         downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
     } else {
         let a = version.mdversion;
+        require(version.localhost + "js/method.js")
         let b = Version();
         if (a != b) {
             deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
