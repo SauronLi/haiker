@@ -1,22 +1,19 @@
-var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
-var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
-var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
-var url = "https://lanmeiguojiang.com/tubiao/";
-var localhost = "hiker://files/rules/bgHouse/src/"
-
 function yiji() {
+    var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
+    var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
+    var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
+    var localhost = "hiker://files/rules/bgHouse/src/"
     download();
     var a = []
-    let b = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
-    for (let i in b) {
+    let name = ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他"];
+    for (let i in name) {
         a.push({
-            title: b[i] === getVar('icon', '影视') ? b[i] : b[i],
-            url: $().lazyRule((name, key) => {
+            title: name[i] === getVar('icon', '2D') ? "““””<b color='#00bbf0'>" + name[i] + "</b>" : name[i],
+            url: $().lazyRule((name) => {
                 putVar('icon', name);
-                putVar('iconkey', key);
                 refreshPage(true);
                 return 'hiker://empty'
-            }, b[i], c[i]),
+            }, name[i]),
             col_type: 'scroll_button'
 
         })
@@ -31,7 +28,7 @@ function yiji() {
         url_icon = d[a];
     }
 
-    switch (getVar('icon', '系统')) {
+    switch (getVar('icon', '2D')) {
         case "系统":
             url(0);
             break;
@@ -83,6 +80,11 @@ function Version() {
 }//版本更新
 
 function download() {
+    var b = ["146", "97", "321", "152", "169", "179", "343", "186"];
+    var c = ["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/"];
+    var d = [".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg"]
+    var url = "https://lanmeiguojiang.com/tubiao/";
+    var localhost = "hiker://files/rules/bgHouse/src/"
     for (let i = 0; i < b.length; i++) {
         var x = parseInt(b[i]);
         for (let j = 1; j < x + 1; j++) {
