@@ -9,9 +9,10 @@ function password() {
             col_type: 'text_3',
             url: $('密码').input((psd,filePath) => {
                 if (psd == input) {
+                    let b={key: input}
                     let obj = {};
                     try {
-                        obj = JSON.parse(input)
+                        obj = JSON.parse(b)
                     } catch (e) {
                         return 'toast://新增失败,JSON校验不通过:' + e.message
                     }
