@@ -2,7 +2,7 @@ function password() {
     // require('')//本地文件设置密码｜直接写死
     var path = "hiker://files/rules/bgHouse/json/password.json";
     var password = 'string';//字符串直接写死
-    if (!fileExcist(path)) {
+    if (!fileExist(path)) {
         var d = [];
         d.push({
             title: '输入密码',
