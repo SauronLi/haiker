@@ -24,9 +24,7 @@ function password() {
         return false;
     } else {
         let a = JSON.parse(fetch(Path))
-
-        if (a[0].key == input) {
-            log(a[0].key)
+        if (a[0].key == password) {
             return true;
         }
         return false;
