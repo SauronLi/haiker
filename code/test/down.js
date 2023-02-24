@@ -5,30 +5,48 @@ var url = "https://lanmeiguojiang.com/tubiao/";
 var localhost = "hiker://files/rules/bgHouse/src/"
 
 function yiji() {
-    for (let i=0; i<2; i++) {
+    download();
+    var a = []
+    for (let i = 2; i < b.length; i++) {
         var num = parseInt(b[i]);
-        for (let j = 1; j < num+1; j++) {
+        for (let j = 1; j < num + 1; j++) {
             try {
-                MY_URL1 = url + c[i] + j + d[i];
-                MY_URL2 = localhost + c[i] + j + d[i];
-               // downloadFile(MY_URL1, MY_URL2);
-            }catch (e){
+                pic = localhost + c[i] + j + d[i];
+                a.push({
+                    title: j + d[i],
+                    url: $("#noLoading#").lazyRule((pic) => {
+                        copy(pic);
+                        return "hiker://empty";
+                    }, pic),
+                    pic_url: pic,
+                    col_type: 'icon_small_4',
+                })
+            } catch (e) {
                 log(e)
             }
         }
         log(i)
     }
-    var a=[]
-    a.push({
-        title: 'Download',
-        col_type: 'movie_3',
 
-    })
 
     setResult(a);
 }
 
 function Version() {
-    return  "0.0.1";
+    return "0.0.1";
 }//版本更新
 
+function download() {
+    for (let i = 0; i < 2; i++) {
+        var num = parseInt(b[i]);
+        for (let j = 1; j < num + 1; j++) {
+            try {
+                url1 = url + c[i] + j + d[i];
+                pic = localhost + c[i] + j + d[i];
+                downloadFile(url1, pic);
+            } catch (e) {
+                log(e + url1)
+            }
+        }
+    }
+}
