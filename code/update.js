@@ -10,13 +10,9 @@ function password() {
             url: $('密码').input((psd,filePath) => {
                 if (psd == input) {
                     let b={key: input}
-                    let obj = {};
-                    try {
-                        obj = JSON.parse(b)
-                    } catch (e) {
-                        return 'toast://新增失败,JSON校验不通过:' + e.message
-                    }
-                    writeFile(filePath, JSON.stringify(obj));
+                    var c =[];
+                    c.push(b)
+                    writeFile(filePath, JSON.stringify(c));
                     refreshPage(false);
                     return 'toast://密码已经保存可使用'
                 } else {
@@ -27,7 +23,7 @@ function password() {
         setResult(d)
         return false;
     } else {
-        let a = JSON.parse(code)
+        let a = JSON.parse(path)
         if (a.key == input) {
             log(a.key)
             return true;
