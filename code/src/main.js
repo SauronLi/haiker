@@ -7,7 +7,7 @@ let namelist = a[0].namelist;
 let numberlist = a[0].numberlist
 let pathlist = a[0].pathlist;
 let typelist = a[0].typelist;
-
+let as=a[0].assets;
 
 function yiji() {
     log(localhost+url+namelist+pathlist+typelist)
@@ -16,9 +16,7 @@ function yiji() {
     for (let i in namelist) {
         d.push({
             title:
-                namelist[i] === getVar("icon", namelist[0])
-                    ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>"
-                    : namelist[i],
+                as[i] === getVar("icon", 0) ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>" : namelist[i],
             url: $().lazyRule((i) => {
                 putVar("icon", i);
                 refreshPage(true);
