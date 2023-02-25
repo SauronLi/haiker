@@ -4,6 +4,8 @@ var home = "hiker://files/bgHouse/src/config.json"
 try {
     if (!fileExist(home)) {
         downloadFile(jpath, home);
+    } else if (getItem("key") == "no") {
+        deleteFile(home);
     } else {
         let farversion = "0.0.5";
         let a = JSON.parse(fetch(home));
@@ -134,8 +136,10 @@ function panduan() {
     d.push({
         title: "同意",
         col_type: 'text_2',
-        url: $("#noLoading#").lazyRule(()=> {
-            setItem("key","yes")
+        url: $("#noLoading#").lazyRule(() => {
+            setItem("key", "yes")
+            refreshPage(false);
+            return 'toast://开始下载图标大约1分钟'
         })
 
     });
@@ -143,17 +147,18 @@ function panduan() {
             title: "不同意",
             col_type: 'text_2',
             url: $("#noLoading#").lazyRule(() => {
-            setItem("key","")
+                setItem("key", "no")
+                refreshPage(false);
+                return 'toast://已经删除下载依赖'
             })
         }
     )
     setResult(d)
-    if (getItem("key")=="yes"){
+    if (getItem("key") == "yes") {
         return true;
-    }else {
+    } else {
         return false;
     }
-
 
 
 }
