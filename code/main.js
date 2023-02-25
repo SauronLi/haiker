@@ -9,19 +9,19 @@ var version = {
     localhost: 'hiker://files/bgHouse/'
 }
 var yijimenu = [{
-    title: "收藏", url: "hiker://collection", pic_url: version.localhost + 'src/more/37.png', col_type: 'icon_4',
+    title: "收藏", url: "hiker://collection", pic_url: version.localhost + 'src/more/1.png', col_type: 'icon_4',
 }, {
-    title: "历史", url: "hiker://history", pic_url: version.localhost + 'src/more/51.png', col_type: 'icon_4',
+    title: "历史", url: "hiker://history", pic_url: version.localhost + 'src/more/2.png', col_type: 'icon_4',
 }, {
     title: "设置", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         shezi();
-    }), pic_url: version.localhost + 'src/more/44.png', col_type: 'icon_4',
+    }), pic_url: version.localhost + 'src/more/3.png', col_type: 'icon_4',
 }, {
     title: "搜索", url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
         require(config.依赖);
         sousuo();
-    }), pic_url: version.localhost + 'src/more/103.png', col_type: 'icon_4',
+    }), pic_url: version.localhost + 'src/more/4.png', col_type: 'icon_4',
 }, {
     col_type: 'line'
 }]
@@ -63,7 +63,7 @@ function update() {
 }
 function GX() {
     require(config.依赖);
-    if (!fileExist(version.localhost + "src/more/343.png")) {
+    if (!fileExist(version.localhost + "src/more/10.png")) {
         for (var i = 1; i < 344; i++) {
             if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
                 downloadFile(version.icon + "more/" + i + ".png", version.localhost + "src/more/" + i + ".png")
@@ -71,7 +71,7 @@ function GX() {
         }
         log("图片已经准备")
     }
-    if (!fileExist(version.localhost + "src/messy/185.svg")) {
+    if (!fileExist(version.localhost + "src/messy/4.svg")) {
         for (var i = 1; i < 186; i++) {
             if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
                 downloadFile(version.icon + "messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
