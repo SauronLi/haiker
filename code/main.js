@@ -85,7 +85,7 @@ function GX() {
         let a = version.mdversion;
         require(version.localhost + "js/method.js")
         let b = Version();
-        if (a != b) {
+        if (a !== b) {
             deleteFile(version.url + "js/method.js", version.localhost + "js/method.js")
             downloadFile(version.url + "js/method.js", version.localhost + "js/method.js")
             log("更新method.js")
@@ -97,7 +97,7 @@ function GX() {
         let a = version.yjversion;
         require(version.localhost + "js/yiji.js")
         let b = Version();
-        if (a != b) {
+        if (a !== b) {
             deleteFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
             downloadFile(version.url + "js/yiji.js", version.localhost + "js/yiji.js")
             log("更新yiji.js")
@@ -109,7 +109,7 @@ function GX() {
         let a = version.ejversion;
         require(version.localhost + "js/erji.js")
         let b = Version();
-        if (a != b) {
+        if (a !== b) {
             deleteFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
             downloadFile(version.url + "js/erji.js", version.localhost + "js/erji.js")
             log("更新erji.js")
