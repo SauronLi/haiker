@@ -1,10 +1,9 @@
 [
     {   "localhost" : "hiker://files/rules/bgHouse/src/",
         "url" : "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
-        
         "namelist" : ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他","图片","头像"],
-        "number": [4, 10, 321, 152, 169, 179, 343, 186,2,1],
-        "path":["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/","tu","acatar"],
-        "type":[".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg","jpg","jpg"]
+        "numberlist": [4, 10, 321, 152, 169, 179, 343, 186,2,1],
+        "pathlist":["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/","tu","acatar"],
+        "typelist":[".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg","jpg","jpg"]
     }
 ]

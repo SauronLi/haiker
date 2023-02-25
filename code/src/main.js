@@ -2,16 +2,18 @@ var jpath =
     "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
 let a = JSON.parse(fetch(jpath));
 let localhost = a[0].localhost;
-let number = a[0].number
-let type = a[0].path;
-let url_icon = a[0].type;
-let namelist = a[0].namelist;
 let url=a[0].url
+let namelist = a[0].namelist;
+let numberlist = a[0].numberlist
+let pathlist = a[0].pathlist;
+let typelist = a[0].typelist;
+
+
 function yiji() {
     download();
     var d = [];
     for (let i in namelist) {
-        a.push({
+        d.push({
             title:
                 namelist[i] === getVar("icon", namelist[0])
                     ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>"
@@ -24,10 +26,10 @@ function yiji() {
             col_type: "scroll_button",
         });
     }
-    var num = number[getVar("icon", 0)];
-    let name = type[getVar("icon", 0)];
-    let value = url_icon[getVar("icon",)]
-    for (let j = 1; j < num + 1; j++) {
+    var number = numberlist[getVar("icon", 0)];
+    let name = pathlist[getVar("icon", 0)];
+    let value = typelist[getVar("icon",)]
+    for (let j = 1; j < number + 1; j++) {
         try {
             let pic = localhost + name + j + value;
             d.push({
@@ -48,10 +50,10 @@ function yiji() {
 
 
 function download() {
-    for (let i = 0; i < number.length; i++) {
-        for (let j = 1; j < number[i] + 1; j++) {
-            let url1 = url + type[i] + j + url_icon[i];
-            let pic = localhost +  type[i] + j + url_icon[i];
+    for (let i = 0; i < numberlist.length; i++) {
+        for (let j = 1; j < numberlist[i] + 1; j++) {
+            let url1 = url + pathlist[i] + j + typelist[i];
+            let pic = localhost +  pathlist[i] + j + typelist[i];
             try {
                 if (!fileExist(pic)) {
                     downloadFile(url1, pic);
