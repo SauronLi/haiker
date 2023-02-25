@@ -122,9 +122,7 @@ function download() {
 }
 
 function panduan() {
-
-
-    if (getItem("key") == "") {
+    if (getItem("o") == "") {
         var d = [];
         var text = "本小程序会下载图标到本地文件夹bghouse大约占8M左右\n" +
             "由于上一次将文件放在rule文件夹中导致备份文件过多，\n" +
@@ -140,7 +138,7 @@ function panduan() {
             title: "同意",
             col_type: 'text_2',
             url: $("#noLoading#").lazyRule(() => {
-                setItem("key", "yes")
+                setItem("o", "yes")
                 refreshPage(false);
                 return 'toast://开始下载图标大约1分钟'
             })
@@ -149,13 +147,13 @@ function panduan() {
             title: "不同意",
             col_type: 'text_2',
             url: $().lazyRule(() => {
-                setItem("key", "");
+                setItem("o", "");
                 refreshPage(true);
                 return "hiker://empty";
             },),
         })
         return false;
-    } else if(getItem("key") == "yes") {
+    } else if(getItem("o") == "yes") {
         return true;
     }else{
         deleteFile(home);
