@@ -1,6 +1,6 @@
 [
   {
-	"version": "0.0.5",
+	"version": "0.0.3",
 	"localhost": "hiker://files/bgHouse/src/",
 	"url": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
 	"namelist": [
@@ -25,7 +25,7 @@
 	  10,
 	  10,
 	  4,
-	  2,
+	  3,
 	  2
 	],
 	"pathlist": [
