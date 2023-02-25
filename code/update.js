@@ -1,16 +1,8 @@
 function password() {
     // require('')//本地文件设置密码｜直接写死
-    var path = "hiker://files/rules/bgHouse/json/password.json";
+    var path = "hiker://files/bgHouse/json/password.json";
     var password = "bgcode666";//字符串直接写死
-    function js(input){
-        eval(getCryptoJS());
-        const j = CryptoJS.enc.Utf8.parse('12cdefglfcdefg12');
-        let j1 = CryptoJS.enc.Utf8.parse(input);
-        let jg = CryptoJS.AES.encrypt(j1, j, {
-            'mode': CryptoJS.mode.ECB, 'padding': CryptoJS.pad.Pkcs7
-        });
-        return  jg.toString()
-    }
+
     if (!fileExist(path)) {
         var d = [];
         d.push({
@@ -53,6 +45,15 @@ function yiji() {
         }])
     }
 
+}
+function js(input){
+    eval(getCryptoJS());
+    const j = CryptoJS.enc.Utf8.parse('12cdefglfcdefg12');
+    let j1 = CryptoJS.enc.Utf8.parse(input);
+    let jg = CryptoJS.AES.encrypt(j1, j, {
+        'mode': CryptoJS.mode.ECB, 'padding': CryptoJS.pad.Pkcs7
+    });
+    return  jg.toString()
 }
 
 
