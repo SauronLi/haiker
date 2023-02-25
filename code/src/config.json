@@ -4,7 +4,7 @@
         "namelist" : ["系统", "影视", "2D", "音乐", "Q版", "可爱", "更多", "其他","图片","头像"],
         "assets": ["0","1","2","3","4","5","6","7","8","9"],
         "numberlist": [4, 10, 321, 152, 169, 179, 343, 186,2,1],
-        "pathlist":["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/","tu","acatar"],
+        "pathlist":["system/", "movie/", "erdi/", "music/", "q/", "ke/", "more/", "messy/","tu/","acatar/"],
         "typelist":[".svg", ".png", ".png", ".svg", ".png", ".png", ".png", ".svg","jpg","jpg"]
     }
 ]
