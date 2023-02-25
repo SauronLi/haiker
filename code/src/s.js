@@ -4,8 +4,6 @@ var home = "hiker://files/bgHouse/src/config.json"
 try {
     if (!fileExist(home)) {
         downloadFile(jpath, home);
-    } else if (getItem("key") == "no") {
-        deleteFile(home);
     } else {
         let farversion = "0.0.5";
         let a = JSON.parse(fetch(home));
@@ -157,7 +155,6 @@ function panduan() {
     } else if(getItem("key") == "yes") {
         return true;
     }else{
-
         return false;
     }
 
