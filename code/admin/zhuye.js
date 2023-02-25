@@ -1,26 +1,10 @@
 function main() {
 
-    let path = "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/admin/config.json";
+    let path = "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/admin/config.js";
     let picurl = "https://www.dmoe.cc/random.php?t=" + Math.random()
-
     let texturl = text()
-    d.push( {
-            "title": "",
-            "desc": "",
-            "col_type": "card_pic_1",
-            "url": "hiker://empty",
-            "pic_url": picurl
-        },
-        {
-            "title": texturl,
-            "desc": "",
-            "col_type": "avatar",
-            "url": "hiker://empty",
-            "pic_url": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/avatar/bgcode.jpeg"
-        })
-    let d = JSON.parse(fetch(path))
-
-    setResult(d);
+    require(path)
+    setResult(a);
 }
 
 function text(){
