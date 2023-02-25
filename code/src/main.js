@@ -8,15 +8,13 @@ function yiji() {
         if (!fileExist(home)) {
             downloadFile(jpath, home);
         }else{
+            let farversion = "0.0.1";
             let a = JSON.parse(fetch(home));
-            let b = JSON.parse(fetch(jpath));
             var localversion =a[0].version
-            var farversion =b[0].version
+
             if(localversion!==farversion){
                 deleteFile(home);
                 downloadFile(jpath, home);
-            }else {
-                log("bgcode图标已准备")
             }
 
         }
