@@ -4,9 +4,7 @@ var home = "hiker://files/bgHouse/src/config.json"
 try {
     if (!fileExist(home)) {
         downloadFile(jpath, home);
-    } else if (getItem("key") == "no") {
-        deleteFile(home);
-    } else {
+    }  else {
         let farversion = "0.0.5";
         let a = JSON.parse(fetch(home));
         var localversion = a[0].version
@@ -122,7 +120,7 @@ function download() {
 }
 
 function panduan() {
-    if (getItem("key","") == "") {
+    if (getItem("keys","") == "") {
         var d = [];
         var text = "本小程序会下载图标到本地文件夹bghouse大约占8M左右\n" +
             "由于上一次将文件放在rule文件夹中导致备份文件过多，\n" +
@@ -138,7 +136,7 @@ function panduan() {
             title: "同意",
             col_type: 'text_2',
             url: $("#noLoading#").lazyRule(() => {
-                setItem("key", "yes")
+                setItem("keys", "yes")
                 refreshPage(false);
                 return 'toast://开始下载图标大约1分钟'
             })
@@ -147,14 +145,14 @@ function panduan() {
             title: "不同意",
             col_type: 'text_2',
             url: $().lazyRule(() => {
-                setItem("key", "");
+                setItem("keys", "");
                 refreshPage(true);
                 return "hiker://empty";
             },),
         })
         setResult(d)
         return false;
-    } else if(getItem("key") == "yes") {
+    } else if(getItem("keys") == "yes") {
         return true;
     }else{
 
