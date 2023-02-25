@@ -134,7 +134,7 @@ function panduan() {
     d.push({
         title: "同意",
         col_type: 'text_2',
-        url: $().rule(() => {
+        url: $("#noLoading#").lazyRule(()=> {
             setItem("key","yes")
         })
 
@@ -142,7 +142,7 @@ function panduan() {
     d.push({
             title: "不同意",
             col_type: 'text_2',
-            url: $().rule(() => {
+            url: $("#noLoading#").lazyRule(() => {
             setItem("key","")
             })
         }
