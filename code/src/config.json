@@ -1,7 +1,7 @@
 [
   {
 	"version": "0.0.3",
-	"localhost": "hiker://files/rules/bgHouse/src/",
+	"localhost": "hiker://files/bgHouse/src/",
 	"url": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
 	"namelist": [
 	  "系统",

@@ -6,7 +6,7 @@ function main() {
     var searchurl = $('').lazyRule(() => {
         var bn = input;
         return $('hiker://empty##fypage##noRecordHistory##noHistory#').rule((bn) => {
-            require("hiker://files/rules/bgHouse/js/method.js");
+            require("hiker://files/bgHouse/js/method.js");
             search(bn);
         }, bn);
 

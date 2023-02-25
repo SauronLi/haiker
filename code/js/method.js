@@ -66,7 +66,7 @@ function sousuo1() {
     var searchurl = $('').lazyRule(() => {
         var bn = input;
         return $('hiker://empty##fypage##noRecordHistory##noHistory#').rule((bn) => {
-            require("hiker://files/rules/bgHouse/js/method.js");
+            require("hiker://files/bgHouse/js/method.js");
             search(bn);
         }, bn);
 
@@ -105,7 +105,7 @@ function search(d) {
             desc: XQ[i].replace("\r\n", ""),
             pic_url: TP[i],
             url: $("hiker://empty##noRecordHistory##noHistory#").rule(() => {
-                require("hiker://files/rules/bgHouse/js/method.js");
+                require("hiker://files/bgHouse/js/method.js");
                 main();
             }),
             col_type: 'movie_2',
@@ -157,7 +157,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: "hiker://files/rules/bgHouse/src/more/67.png",
+        pic_url: "hiker://files/bgHouse/src/more/67.png",
         col_type: "icon_small_3",
     })
     a.push({
@@ -166,7 +166,7 @@ function main() {
         url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
         }, description),
-        pic_url: "hiker://files/rules/bgHouse/src/more/10.png",
+        pic_url: "hiker://files/bgHouse/src/more/10.png",
         col_type: "icon_small_3",
         extra: {"inheritTitle": false}//不继承标题
     })
@@ -174,10 +174,10 @@ function main() {
         title: "搜索",
         desc: "",
         url: $("hiker://empty#noRecordHistory##noHistory#").rule(() => {
-            require("hiker://files/rules/bgHouse/method.js");
+            require("hiker://files/bgHouse/method.js");
             sousuo();
         }),
-        pic_url: "hiker://files/rules/bgHouse/src/more/195.png",
+        pic_url: "hiker://files/bgHouse/src/more/195.png",
         col_type: "icon_small_3",
     })
 
@@ -194,7 +194,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: getItem("zf", "f") == "z" ? "hiker://files/rules/bgHouse/src/messy/123.svg" : "hiker://files/rules/bgHouse/src/messy/124.svg",
+        pic_url: getItem("zf", "f") == "z" ? "hiker://files/bgHouse/src/messy/123.svg" : "hiker://files/bgHouse/src/messy/124.svg",
     })
     for (let i in xl) {
         a.push(xl[i])
@@ -204,7 +204,7 @@ function main() {
             a.push({
                 title: "第" + (i + 1) + "话",
                 url: $().lazyRule((url) => {
-                    require("hiker://files/rules/bgHouse/js/erji.js");
+                    require("hiker://files/bgHouse/js/erji.js");
                     return eval(url)
                 }, (url[i])), col_type: 'text_4',
             })
@@ -214,7 +214,7 @@ function main() {
             a.push({
                 title: "第" + (i + 1) + "话",
                 url: $().lazyRule((url) => {
-                    require("hiker://files/rules/bgHouse/js/erji.js");
+                    require("hiker://files/bgHouse/js/erji.js");
                     return eval(url)
                 }, (url[i])), col_type: 'text_4',
             })
