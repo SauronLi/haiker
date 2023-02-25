@@ -48,7 +48,7 @@ function yiji() {
     var number = numberlist[p];
     let name = pathlist[p];
     let value = typelist[p]
-    if(p==8){
+    if(p==4){
 
         for (let j = 1; j < number + 1; j++) {
             try {
@@ -66,7 +66,7 @@ function yiji() {
                 log(e);
             }
         }
-    }else if(p==9){
+    }else if(p==5){
         for (let j = 1; j < number + 1; j++) {
             try {
                 let pic = localhost + name + j + value;
