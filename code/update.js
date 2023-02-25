@@ -10,6 +10,7 @@ function password() {
             col_type: 'text_3',
             url: $('密码').input((psd,filePath) => {
                 if (psd == input) {
+                    require(config.依赖)
                     let url = js(input)
                     let b={key: url}
                     var c =[];
