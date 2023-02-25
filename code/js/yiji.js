@@ -1,6 +1,6 @@
 
 function Version() {
-    return  "0.0.3";
+    return  "0.0.4";
 }//版本更新
 
 function main() {
