@@ -4,10 +4,10 @@
 	"desc": "",
 	"col_type": "card_pic_1",
 	"url": "hiker://empty",
-	"pic_url": "@js:\"https://www.dmoe.cc/random.php?t=\"+Math.random()"
+	"pic_url": "picurl"
   },
   {
-	"title": "@js:\nvar items = [\"https://v1.hitokoto.cn/?encode=text\"];\nvar colors = ['grey', '#ff7512', '#cb54ff', '#ff5358', '#ff9044', '#7678ff', '#34b1ff'];\n\nfunction getOne(items) {\n    return items[Math.floor(Math.random() * items.length)]\n}\n\nlet word = \"此情若是长久时,网络不好可不行\";\nvar tips = '<small><font color=\"' + getOne(colors) + '\">' + word + '</font></small>';\ntry {\n    let word = request(getOne(items), {timeout: 500});\n    if (word.length < 2) {\n        tips\n    } else {\n        '<small><font color=\"' + getOne(colors) + '\">' + word + '</font></small>'\n    }\n} catch (e) {\n    tips\n}",
+	"title": "texturl",
 	"desc": "",
 	"col_type": "avatar",
 	"url": "hiker://empty",
@@ -68,17 +68,19 @@
 	"col_type": "line",
 	"url": "",
 	"pic_url": ""
-  }, {
-  "title": "",
-  "desc": "我的小程序（）",
-  "col_type": "movie_2",
-  "url": "hiker://home",
-  "pic_url": ""
-},{
-  "title": "",
-  "desc": "聚影",
-  "col_type": "movie_2",
-  "url": "hiker://home@聚影",
-  "pic_url": ""
-}
+  },
+  {
+	"title": "",
+	"desc": "我的小程序（）",
+	"col_type": "movie_2",
+	"url": "hiker://home",
+	"pic_url": ""
+  },
+  {
+	"title": "",
+	"desc": "聚影",
+	"col_type": "movie_2",
+	"url": "hiker://home@聚影",
+	"pic_url": ""
+  }
 ]
