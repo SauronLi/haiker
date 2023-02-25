@@ -122,44 +122,45 @@ function download() {
 }
 
 function panduan() {
-    var d = [];
-    var text = "本小程序会下载图标到本地文件夹bghouse大约占8M左右\n" +
-        "由于上一次将文件放在rule文件夹中导致备份文件过多，\n" +
-        "请大家删除文件rule文件夹下的bghouse文件夹\n" +
-        "同意即可使用                 不同意请删除小程序\n";
-    d.push({
-        title: text,
-        col_type: 'rich_text',
-        url: "hiker://empty",
-        extra: {lineSpacing: 10, textSize: 18}
-    });
-    d.push({
-        title: "同意",
-        col_type: 'text_2',
-        url: $("#noLoading#").lazyRule(() => {
-            setItem("key", "yes")
-            refreshPage(false);
-            return 'toast://开始下载图标大约1分钟'
-        })
 
-    });
-    d.push({
+
+    if (getItem("key") == "") {
+        var d = [];
+        var text = "本小程序会下载图标到本地文件夹bghouse大约占8M左右\n" +
+            "由于上一次将文件放在rule文件夹中导致备份文件过多，\n" +
+            "请大家删除文件rule文件夹下的bghouse文件夹\n" +
+            "同意即可使用                 不同意请删除小程序\n";
+        d.push({
+            title: text,
+            col_type: 'rich_text',
+            url: "hiker://empty",
+            extra: {lineSpacing: 10, textSize: 18}
+        });
+        d.push({
+            title: "同意",
+            col_type: 'text_2',
+            url: $("#noLoading#").lazyRule(() => {
+                setItem("key", "yes")
+                refreshPage(false);
+                return 'toast://开始下载图标大约1分钟'
+            })
+        });
+        d.push({
             title: "不同意",
             col_type: 'text_2',
             url: $().lazyRule(() => {
                 setItem("key", "");
                 refreshPage(true);
                 return "hiker://empty";
-            }, ),
-
-        }
-    )
-    setResult(d)
-    if (getItem("key") == "yes") {
+            },),
+        })
+        return false;
+    } else if(getItem("key") == "yes") {
         return true;
-    } else {
+    }else{
+        deleteFile(home);
         return false;
     }
-
+    setResult(d)
 
 }
