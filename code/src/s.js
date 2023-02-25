@@ -122,7 +122,7 @@ function download() {
 }
 
 function panduan() {
-    if (getItem("o") == "") {
+    if (getItem("o","") == "") {
         var d = [];
         var text = "本小程序会下载图标到本地文件夹bghouse大约占8M左右\n" +
             "由于上一次将文件放在rule文件夹中导致备份文件过多，\n" +
@@ -156,7 +156,7 @@ function panduan() {
     } else if(getItem("o") == "yes") {
         return true;
     }else{
-        deleteFile(home);
+
         return false;
     }
     setResult(d)
