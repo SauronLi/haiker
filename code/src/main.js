@@ -10,13 +10,12 @@ let typelist = a[0].typelist;
 let as=a[0].assets;
 
 function yiji() {
-    log(localhost+url+namelist+pathlist+typelist)
-    //download();
+    download();
     var d = [];
     for (let i in namelist) {
         d.push({
             title:
-                as[i] === getVar("icon", 0) ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>" : namelist[i],
+                as[i] === getVar("icon", "0") ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>" : namelist[i],
             url: $().lazyRule((i) => {
                 putVar("icon", i);
                 refreshPage(true);
@@ -25,7 +24,7 @@ function yiji() {
             col_type: "scroll_button",
         });
     }
-    let p=parseInt(getVar("icon", 0));
+    let p=parseInt(getVar("icon", "0"));
     log(p);
     var number = numberlist[p];
     let name = pathlist[p];
