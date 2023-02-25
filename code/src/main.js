@@ -142,8 +142,9 @@ function panduan() {
         url: "hiker",
 
     }))
+    setResult(d)
     return false;
 
-    setResult(d)
+
 
 }
