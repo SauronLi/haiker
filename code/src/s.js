@@ -1,34 +1,35 @@
-function yiji() {
-    var jpath =
-        "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
-    var home="hiker://files/rules/bgHouse/src/config.json"
-    try {
-        if (!fileExist(home)) {
+
+var jpath =
+    "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
+var home="hiker://files/rules/bgHouse/src/config.json"
+try {
+    if (!fileExist(home)) {
+        downloadFile(jpath, home);
+    }else{
+        let farversion = "0.0.1";
+        let a = JSON.parse(fetch(home));
+        var localversion =a[0].version
+
+        if(localversion!==farversion){
+            deleteFile(home);
             downloadFile(jpath, home);
-        }else{
-            let farversion = "0.0.1";
-            let a = JSON.parse(fetch(home));
-            var localversion =a[0].version
-
-            if(localversion!==farversion){
-                deleteFile(home);
-                downloadFile(jpath, home);
-            }
-
         }
-    } catch (e) {
-        log(e + jpath);
-    }
-    let a = JSON.parse(fetch(home));
-    download();
-    let localhost = a[0].localhost;
-    let url=a[0].url
-    let namelist = a[0].namelist;
-    let numberlist = a[0].numberlist
-    let pathlist = a[0].pathlist;
-    let typelist = a[0].typelist;
-    let as=a[0].assets;
 
+    }
+} catch (e) {
+    log(e + jpath);
+}
+let a = JSON.parse(fetch(home));
+
+let localhost = a[0].localhost;
+let url=a[0].url
+let namelist = a[0].namelist;
+let numberlist = a[0].numberlist
+let pathlist = a[0].pathlist;
+let typelist = a[0].typelist;
+let as=a[0].assets;
+function yiji() {
+    download();
     var d = [];
     for (let i in namelist) {
         d.push({
@@ -98,7 +99,6 @@ function yiji() {
             }
         }
     }
-
     setResult(d);
 }
 
