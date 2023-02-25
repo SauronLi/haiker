@@ -27,7 +27,7 @@ let typelist = a[0].typelist;
 let as = a[0].assets;
 
 function yiji() {
-    if (panduan()) {
+    // if (panduan()) {
         download();
         var d = [];
         for (let i in namelist) {
@@ -100,7 +100,7 @@ function yiji() {
             }
         }
         setResult(d);
-    }
+    // }
 }
 
 function download() {
