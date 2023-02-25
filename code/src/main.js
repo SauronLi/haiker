@@ -6,7 +6,7 @@ try {
     if (!fileExist(home)) {
         downloadFile(jpath, home);
     }else{
-        let farversion = "0.0.1";
+        let farversion = "0.0.2";
         let a = JSON.parse(fetch(home));
         var localversion =a[0].version
 

@@ -1,6 +1,6 @@
 [
   {
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"localhost": "hiker://files/rules/bgHouse/src/",
 	"url": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
 	"namelist": [
@@ -30,12 +30,12 @@
 	"numberlist": [
 	  4,
 	  10,
-	  121,
-	  152,
-	  169,
-	  179,
-	  143,
-	  86,
+	  30,
+	  30,
+	  30,
+	  30,
+	  30,
+	  36,
 	  2,
 	  2
 	],
