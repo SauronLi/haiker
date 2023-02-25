@@ -133,7 +133,7 @@ function panduan() {
     });
     d.push({
         title: "同意",
-        col_type: 'rich_text',
+        col_type: 'text_2',
         url: $().rule(() => {
             setItem("key","yes")
         })
@@ -141,14 +141,14 @@ function panduan() {
     });
     d.push({
             title: "不同意",
-            col_type: 'rich_text',
+            col_type: 'text_2',
             url: $().rule(() => {
             setItem("key","")
             })
         }
     )
     setResult(d)
-    if (getItem("key")==yes){
+    if (getItem("key")=="yes"){
         return true;
     }else {
         return false;
