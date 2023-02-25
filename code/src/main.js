@@ -1,23 +1,36 @@
-var jpath =
-    "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
-try {
-    if (!fileExist(pic)) {
-        downloadFile(jpath, "hiker://files/rules/bgHouse/src/config.json");
-    }
-} catch (e) {
-    log(e + jpath);
-}
-let a = JSON.parse(fetch("hiker://files/rules/bgHouse/src/config.json"));
-let localhost = a[0].localhost;
-let url=a[0].url
-let namelist = a[0].namelist;
-let numberlist = a[0].numberlist
-let pathlist = a[0].pathlist;
-let typelist = a[0].typelist;
-let as=a[0].assets;
+
 
 function yiji() {
-    download();
+    var jpath =
+        "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
+    try {
+        if (!fileExist("hiker://files/rules/bgHouse/src/config.json")) {
+            downloadFile(jpath, "hiker://files/rules/bgHouse/src/config.json");
+        }
+    } catch (e) {
+        log(e + jpath);
+    }
+    let a = JSON.parse(fetch("hiker://files/rules/bgHouse/src/config.json"));
+    let localhost = a[0].localhost;
+    let url=a[0].url
+    let namelist = a[0].namelist;
+    let numberlist = a[0].numberlist
+    let pathlist = a[0].pathlist;
+    let typelist = a[0].typelist;
+    let as=a[0].assets;
+    for (let i = 0; i < numberlist.length; i++) {
+        for (let j = 1; j < numberlist[i] + 1; j++) {
+            let url1 = url + pathlist[i] + j + typelist[i];
+            let pic = localhost +  pathlist[i] + j + typelist[i];
+            try {
+                if (!fileExist(pic)) {
+                    downloadFile(url1, pic);
+                }
+            } catch (e) {
+                log(e + url1);
+            }
+        }
+    }
     var d = [];
     for (let i in namelist) {
         d.push({
@@ -58,19 +71,4 @@ function yiji() {
 
 function download() {
 
-
-
-    for (let i = 0; i < numberlist.length; i++) {
-        for (let j = 1; j < numberlist[i] + 1; j++) {
-            let url1 = url + pathlist[i] + j + typelist[i];
-            let pic = localhost +  pathlist[i] + j + typelist[i];
-            try {
-                if (!fileExist(pic)) {
-                    downloadFile(url1, pic);
-                }
-            } catch (e) {
-                log(e + url1);
-            }
-        }
-    }
 }
