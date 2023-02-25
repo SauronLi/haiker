@@ -58,30 +58,61 @@ function yiji() {
         });
     }
     let p=parseInt(getVar("icon", "0"));
-    log(p);
     var number = numberlist[p];
     let name = pathlist[p];
     let value = typelist[p]
-    for (let j = 1; j < number + 1; j++) {
-        try {
-            let pic = localhost + name + j + value;
-            d.push({
-                title: j + value,
-                url: $("#noLoading#").lazyRule((pic) => {
-                    copy(pic);
-                    return "hiker://empty";
-                }, pic),
-                pic_url: pic,
-                col_type: "icon_small_4",
-            });
-        } catch (e) {
-            log(e);
+    if(p==8){
+        for (let j = 1; j < number + 1; j++) {
+            try {
+                let pic = localhost + name + j + value;
+                d.push({
+                    title: j + value,
+                    url: $("#noLoading#").lazyRule((pic) => {
+                        copy(pic);
+                        return "hiker://empty";
+                    }, pic),
+                    pic_url: pic,
+                    col_type: "movie_2",
+                });
+            } catch (e) {
+                log(e);
+            }
+        }
+    }else if(p==9){
+        for (let j = 1; j < number + 1; j++) {
+            try {
+                let pic = localhost + name + j + value;
+                d.push({
+                    title: j + value,
+                    url: $("#noLoading#").lazyRule((pic) => {
+                        copy(pic);
+                        return "hiker://empty";
+                    }, pic),
+                    pic_url: pic,
+                    col_type: "icon_round_4",
+                });
+            } catch (e) {
+                log(e);
+            }
+        }
+    }else {
+        for (let j = 1; j < number + 1; j++) {
+            try {
+                let pic = localhost + name + j + value;
+                d.push({
+                    title: j + value,
+                    url: $("#noLoading#").lazyRule((pic) => {
+                        copy(pic);
+                        return "hiker://empty";
+                    }, pic),
+                    pic_url: pic,
+                    col_type: "icon_small_4",
+                });
+            } catch (e) {
+                log(e);
+            }
         }
     }
+
     setResult(d);
-}
-
-
-function download() {
-
 }
