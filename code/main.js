@@ -64,7 +64,7 @@ function update() {
 function GX() {
     require(config.依赖);
     if (!fileExist(version.localhost + "src/more/10.png")) {
-        for (var i = 1; i < 10; i++) {
+        for (var i = 1; i < 11; i++) {
             if (!fileExist(version.localhost + "src/more/" + i + ".png")) {
                 downloadFile(version.icon + "more/" + i + ".png", version.localhost + "src/more/" + i + ".png")
             }
@@ -72,7 +72,7 @@ function GX() {
         log("图片已经准备")
     }
     if (!fileExist(version.localhost + "src/messy/4.svg")) {
-        for (var i = 1; i < 4; i++) {
+        for (var i = 1; i < 5; i++) {
             if (!fileExist(version.localhost + "src/messy/" + i + ".png")) {
                 downloadFile(version.icon + "messy/" + i + ".svg", version.localhost + "src/messy/" + i + ".svg")
             }
