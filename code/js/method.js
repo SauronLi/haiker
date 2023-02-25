@@ -9,7 +9,7 @@ function shezhi() {
         title: "<b><small>功能</small></b>",
         url: "hiker://empty",
         col_type: "avatar",
-        img: version.localhost + "src/more/94.png",
+        img: version.localhost + "src/more/5.png",
     });
     let ur = version.localhost + "src/messy/";
     d.push({
@@ -23,7 +23,7 @@ function shezhi() {
             refreshPage(false);
             return "hiker://empty";
         }, arrary),
-        img: getItem(arrary, arrary == "genxin" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+        img: getItem(arrary, arrary == "genxin" ? "on" : "off") == "on" ? ur + "1.svg" : ur + "2.svg",
         col_type: "text_icon",
     });
     d.push({
@@ -33,7 +33,7 @@ function shezhi() {
         title: "<b><small>首页选择</small></b>",
         url: "hiker://empty",
         col_type: "avatar",
-        img: version.localhost + "src/more/50.png",
+        img: version.localhost + "src/more/6.png",
     });
 
     d.push({
@@ -47,7 +47,7 @@ function shezhi() {
             refreshPage(false);
             return "hiker://empty";
         }, zhuye),
-        img: getItem(zhuye, zhuye == "H" ? "on" : "off") == "on" ? ur + "55.svg" : ur + "63.svg",
+        img: getItem(zhuye, zhuye == "H" ? "on" : "off") == "on" ? ur + "1.svg" : ur + "2.svg",
         col_type: "text_icon",
     })
     if (getItem(arrary) == "on") {
@@ -157,7 +157,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: "hiker://files/bgHouse/src/more/67.png",
+        pic_url: "hiker://files/bgHouse/src/more/7.png",
         col_type: "icon_small_3",
     })
     a.push({
@@ -166,7 +166,7 @@ function main() {
         url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
         }, description),
-        pic_url: "hiker://files/bgHouse/src/more/10.png",
+        pic_url: "hiker://files/bgHouse/src/more/8.png",
         col_type: "icon_small_3",
         extra: {"inheritTitle": false}//不继承标题
     })
@@ -177,7 +177,7 @@ function main() {
             require("hiker://files/bgHouse/method.js");
             sousuo();
         }),
-        pic_url: "hiker://files/bgHouse/src/more/195.png",
+        pic_url: "hiker://files/bgHouse/src/more/9.png",
         col_type: "icon_small_3",
     })
 
@@ -194,7 +194,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: getItem("zf", "f") == "z" ? "hiker://files/bgHouse/src/messy/123.svg" : "hiker://files/bgHouse/src/messy/124.svg",
+        pic_url: getItem("zf", "f") == "z" ? "hiker://files/bgHouse/src/messy/3.svg" : "hiker://files/bgHouse/src/messy/4.svg",
     })
     for (let i in xl) {
         a.push(xl[i])

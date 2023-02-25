@@ -36,7 +36,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: version.localhost + "src/more/67.png",
+        pic_url: version.localhost + "src/more/7.png",
         col_type: "icon_small_3",
     })
     a.push({
@@ -45,7 +45,7 @@ function main() {
         url: $("hiker://empty#noRecordHistory##noHistory#").rule((description) => {
             setResult([{title: description, col_type: "long_text"}]);
         }, description),
-        pic_url: version.localhost + "src/more/10.png",
+        pic_url: version.localhost + "src/more/8.png",
         col_type: "icon_small_3",
         extra: {"inheritTitle": false}//不继承标题
     })
@@ -56,7 +56,7 @@ function main() {
             require(version.localhost + "method.js");
             sousuo();
         }),
-        pic_url: version.localhost + "src/more/195.png",
+        pic_url: version.localhost + "src/more/9.png",
         col_type: "icon_small_3",
     })
 
@@ -73,7 +73,7 @@ function main() {
             refreshPage(false);
             return "#noHistory#hiker://empty"
         }),
-        pic_url: getItem("zf", "f") == "z" ? version.localhost + "src/messy/123.svg" : version.localhost + "src/messy/124.svg",
+        pic_url: getItem("zf", "f") == "z" ? version.localhost + "src/messy/3.svg" : version.localhost + "src/messy/4.svg",
     })
     for (let i in xl) {
         a.push(xl[i])
