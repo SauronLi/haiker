@@ -1,9 +1,9 @@
 var version = {
     author: "bgcode",
     ver: '0.0.3',
-    mdversion:'0.0.3',
-    yjversion:'0.0.3',
-    ejversion:'0.0.3',
+    mdversion:'0.0.4',
+    yjversion:'0.0.4',
+    ejversion:'0.0.4',
     url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/',
     icon: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/',
     localhost: 'hiker://files/bgHouse/'
