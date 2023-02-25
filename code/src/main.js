@@ -10,7 +10,8 @@ let typelist = a[0].typelist;
 
 
 function yiji() {
-    download();
+    log(localhost+url+namelist+pathlist+typelist)
+    //download();
     var d = [];
     for (let i in namelist) {
         d.push({
@@ -18,17 +19,19 @@ function yiji() {
                 namelist[i] === getVar("icon", namelist[0])
                     ? "““””<font color='#00bbf0'>" + namelist[i] + "</font>"
                     : namelist[i],
-            url: $().lazyRule((name) => {
-                putVar("icon", name);
+            url: $().lazyRule((i) => {
+                putVar("icon", i);
                 refreshPage(true);
                 return "hiker://empty";
             }, i),
             col_type: "scroll_button",
         });
     }
-    var number = numberlist[getVar("icon", 0)];
-    let name = pathlist[getVar("icon", 0)];
-    let value = typelist[getVar("icon",)]
+    let p=parseInt(getVar("icon", 0));
+    log(p);
+    var number = numberlist[p];
+    let name = pathlist[p];
+    let value = typelist[p]
     for (let j = 1; j < number + 1; j++) {
         try {
             let pic = localhost + name + j + value;
