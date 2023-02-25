@@ -1,0 +1,32 @@
+[
+  {
+	"author": "bgcode",
+	"version": "0.0.3",
+	"mdversion": "0.0.3",
+	"yjversion": "0.0.3",
+	"ejversion": "0.0.3",
+	"url": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/",
+	"icon": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
+	"localhost": "hiker://files/rules/bgHouse/"
+  },
+  {
+	"name": "H漫画",
+	"url": "https://www.mhww.xyz",
+	"yijirule": {
+	  "title" : "//*[@id=\"booklist\"]/div/div/div/p/span/text()",
+	  "pic_url" : "//*[@id=\"booklist\"]/div/div/div[1]/img/@src",
+	  "desc":"//*[@id=\"booklist\"]/div/div/div[2]/p[2]/text()",
+	  "url": "//*[@id=\"booklist\"]/div/div/@onclick",
+	  "col_type":""
+	},
+	"erjirule": {
+	  "url": "",
+	  "mode": "pics://"
+	},
+	"description": "一个漫画网站",
+	"version": "0.0.1"
+  },
+  {
+	"name": ""
+  }
+]
