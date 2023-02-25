@@ -1,47 +1,35 @@
 
+var jpath =
+    "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
+var home="hiker://files/rules/bgHouse/src/config.json"
+try {
+    if (!fileExist(home)) {
+        downloadFile(jpath, home);
+    }else{
+        let farversion = "0.0.1";
+        let a = JSON.parse(fetch(home));
+        var localversion =a[0].version
 
-function yiji() {
-    var jpath =
-        "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
-    var home="hiker://files/rules/bgHouse/src/config.json"
-    try {
-        if (!fileExist(home)) {
+        if(localversion!==farversion){
+            deleteFile(home);
             downloadFile(jpath, home);
-        }else{
-            let farversion = "0.0.1";
-            let a = JSON.parse(fetch(home));
-            var localversion =a[0].version
-
-            if(localversion!==farversion){
-                deleteFile(home);
-                downloadFile(jpath, home);
-            }
-
         }
-    } catch (e) {
-        log(e + jpath);
+
     }
-    let a = JSON.parse(fetch(home));
-    let localhost = a[0].localhost;
-    let url=a[0].url
-    let namelist = a[0].namelist;
-    let numberlist = a[0].numberlist
-    let pathlist = a[0].pathlist;
-    let typelist = a[0].typelist;
-    let as=a[0].assets;
-    for (let i = 0; i < numberlist.length; i++) {
-        for (let j = 1; j < numberlist[i] + 1; j++) {
-            let url1 = url + pathlist[i] + j + typelist[i];
-            let pic = localhost +  pathlist[i] + j + typelist[i];
-            try {
-                if (!fileExist(pic)) {
-                    downloadFile(url1, pic);
-                }
-            } catch (e) {
-                log(e + url1);
-            }
-        }
-    }
+} catch (e) {
+    log(e + jpath);
+}
+let a = JSON.parse(fetch(home));
+
+let localhost = a[0].localhost;
+let url=a[0].url
+let namelist = a[0].namelist;
+let numberlist = a[0].numberlist
+let pathlist = a[0].pathlist;
+let typelist = a[0].typelist;
+let as=a[0].assets;
+function yiji() {
+    download();
     var d = [];
     for (let i in namelist) {
         d.push({
@@ -60,6 +48,7 @@ function yiji() {
     let name = pathlist[p];
     let value = typelist[p]
     if(p==8){
+
         for (let j = 1; j < number + 1; j++) {
             try {
                 let pic = localhost + name + j + value;
@@ -111,6 +100,21 @@ function yiji() {
             }
         }
     }
-
     setResult(d);
+}
+
+function download(){
+    for (let i = 0; i < numberlist.length; i++) {
+        for (let j = 1; j < numberlist[i] + 1; j++) {
+            let url1 = url + pathlist[i] + j + typelist[i];
+            let pic = localhost +  pathlist[i] + j + typelist[i];
+            try {
+                if (!fileExist(pic)) {
+                    downloadFile(url1, pic);
+                }
+            } catch (e) {
+                log(e + url1);
+            }
+        }
+    }
 }
