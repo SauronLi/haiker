@@ -146,11 +146,12 @@ function panduan() {
     d.push({
             title: "不同意",
             col_type: 'text_2',
-            url: $("#noLoading#").lazyRule(() => {
-                setItem("key", "no")
-                refreshPage(false);
-                return 'toast://已经删除下载依赖'
-            })
+            url: $().lazyRule(() => {
+                setItem("key", "");
+                refreshPage(true);
+                return "hiker://empty";
+            }, ),
+
         }
     )
     setResult(d)
