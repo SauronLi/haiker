@@ -4,10 +4,10 @@
 	"desc": "",
 	"col_type": "card_pic_1",
 	"url": "hiker://empty",
-	"pic_url": "picurl"
+	"pic_url": picurl
   },
   {
-	"title": "texturl",
+	"title": texturl,
 	"desc": "",
 	"col_type": "avatar",
 	"url": "hiker://empty",
