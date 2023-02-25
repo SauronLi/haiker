@@ -48,6 +48,7 @@ function yiji() {
     let name = pathlist[p];
     let value = typelist[p]
     if(p==8){
+
         for (let j = 1; j < number + 1; j++) {
             try {
                 let pic = localhost + name + j + value;
