@@ -3,14 +3,27 @@
 function yiji() {
     var jpath =
         "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
+    var home="hiker://files/rules/bgHouse/src/config.json"
     try {
-        if (!fileExist("hiker://files/rules/bgHouse/src/config.json")) {
-            downloadFile(jpath, "hiker://files/rules/bgHouse/src/config.json");
+        if (!fileExist(home)) {
+            downloadFile(jpath, home);
+        }else{
+            let a = JSON.parse(fetch(home));
+            let b = JSON.parse(fetch(jpath));
+            var localversion =a[0].version
+            var farversion =b[0].version
+            if(localversion!==farversion){
+                deleteFile(home);
+                downloadFile(jpath, home);
+            }else {
+                log("bgcode图标已准备")
+            }
+
         }
     } catch (e) {
         log(e + jpath);
     }
-    let a = JSON.parse(fetch("hiker://files/rules/bgHouse/src/config.json"));
+    let a = JSON.parse(fetch(home));
     let localhost = a[0].localhost;
     let url=a[0].url
     let namelist = a[0].namelist;
