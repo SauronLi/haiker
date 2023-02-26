@@ -115,16 +115,44 @@ function download() {
             } catch (e) {
                 log(e + url1);
             }
+           switch (i){
+               case 0:
+                   log("下载到20%");
+                   toast://下载到20%;
+                   break
+               case 1:
+                   log("下载到40%");
+                   toast://下载到40%;
+                   break
+               case 2:
+                   log("下载到50%");
+                   toast://下载到50%;
+                   break
+               case 3:
+                   log("下载到70%");
+                   toast://下载到70%;
+                   break
+               case 4:
+                   log("下载到80%");
+                   toast://下载到80%;
+                   break
+               case 5:
+                   log("下载到100%");
+                   toast://下载到100%;
+                   break
+
+           }
         }
     }
 }
 
 function panduan() {
-    if (getItem("key","") == "") {
+    if (getItem("keys", "") == "") {
         var d = [];
         var text = "本小程序会下载图标到本地文件夹bghouse大约占8M左右\n" +
+            "第一次加载较为缓慢预计2分钟，log日志可显示下载百分比\n"+
             "由于上一次将文件放在rule文件夹中导致备份文件过多，\n" +
-            "请大家删除文件rule文件夹下的bghouse文件夹\n" +
+            "请大家删除文件rule文件夹下的bghouse文件夹详细请看规则分享\n" +
             "同意即可使用                 不同意请删除小程序\n";
         d.push({
             title: text,
@@ -136,7 +164,7 @@ function panduan() {
             title: "同意",
             col_type: 'text_2',
             url: $("#noLoading#").lazyRule(() => {
-                setItem("key", "yes")
+                setItem("keys", "yes")
                 refreshPage(false);
                 return 'toast://开始下载图标大约1分钟'
             })
@@ -145,16 +173,17 @@ function panduan() {
             title: "不同意",
             col_type: 'text_2',
             url: $().lazyRule(() => {
-                setItem("key", "");
+                setItem("keys", "");
                 refreshPage(true);
                 return "hiker://empty";
             },),
         })
         setResult(d)
         return false;
-    } else if(getItem("key") == "yes") {
+    } else if (getItem("keys") == "yes") {
         return true;
-    }else{
+    } else {
+
         return false;
     }
 
