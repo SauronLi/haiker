@@ -1,5 +1,5 @@
 var jpath =
-    "https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/config.json";
+    "./config.json";
 var home = "hiker://files/bgHouse/src/config.json"
 try {
     if (!fileExist(home)) {
