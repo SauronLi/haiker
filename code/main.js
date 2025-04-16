@@ -5,7 +5,7 @@ var version = {
     yjversion:'0.0.4',
     ejversion:'0.0.4',
     url: 'https://raw.githubusercontent.com/SauronLi/haiker/main/code/',
-    icon: './src/',
+    icon: 'https://raw.githubusercontent.com/SauronLi/haiker/main/code/src/',
     localhost: 'hiker://files/bgHouse/'
 }
 var yijimenu = [{
