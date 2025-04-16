@@ -4,7 +4,7 @@ var version = {
     mdversion:'0.0.4',
     yjversion:'0.0.4',
     ejversion:'0.0.4',
-    url: './',
+    url: 'https://raw.githubusercontent.com/SauronLi/haiker/main/code/',
     icon: './src/',
     localhost: 'hiker://files/bgHouse/'
 }
