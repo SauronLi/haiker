@@ -4,8 +4,8 @@ var version = {
     mdversion:'0.0.4',
     yjversion:'0.0.4',
     ejversion:'0.0.4',
-    url: './code/',
-    icon: './code/src/',
+    url: './',
+    icon: './src/',
     localhost: 'hiker://files/bgHouse/'
 }
 var yijimenu = [{
