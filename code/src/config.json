@@ -2,7 +2,7 @@
   {
 	"version": "0.0.5",
 	"localhost": "hiker://files/bgHouse/src/",
-	"url": "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
+	"url": "去除代理链接https://raw.githubusercontent.com/Codebglh/haiker/main/code/src/",
 	"namelist": [
 	  "系统",
 	  "影视",
