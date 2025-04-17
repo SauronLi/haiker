@@ -5,8 +5,8 @@
 	"mdversion": "0.0.3",
 	"yjversion": "0.0.3",
 	"ejversion": "0.0.3",
-	"url": "https://ghproxy.com/https://raw.gitmirror.com/Codebglh/haiker/main/code/",
-	"icon": "https://ghproxy.com/https://raw.gitmirror.com/Codebglh/haiker/main/code/src/",
+	"url": "https://raw.gitmirror.com/Codebglh/haiker/main/code/",
+	"icon": "https://raw.gitmirror.com/Codebglh/haiker/main/code/src/",
 	"localhost": "hiker://files/rules/bgHouse/"
   },
   {

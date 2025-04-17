@@ -2,11 +2,11 @@ var updateLog = '2022/09/26 初制作模版';
 var version = {
     author: "bgcode",
     ver: "0.0.2",
-    Id: "https://ghproxy.com/https://raw.gitmirror.com/Codebglh/hikerule/main/l/moban.js",
+    Id: "https://raw.gitmirror.com/Codebglh/hikerule/main/l/moban.js",
     update: '2022/09/26 14:25',
     info: updateLog,
     ok: 'https://okjx.cc/?url=',
-    url: 'https://ghproxy.com/https://raw.gitmirror.com/Codebglh/hikerule/main/l/',
+    url: 'https://raw.gitmirror.com/Codebglh/hikerule/main/l/',
 };
 
 function yiji() {
