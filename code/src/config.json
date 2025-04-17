@@ -2,7 +2,7 @@
   {
 	"version": "0.0.5",
 	"localhost": "hiker://files/bgHouse/src/",
-	"url": "https://raw.githubusercontent.com/SauronLi/haiker/main/code/src/",
+	"url": "https://raw.gitmirror.com/SauronLi/haiker/main/code/src/",
 	"namelist": [
 	  "系统",
 	  "影视",

@@ -4,8 +4,8 @@ var version = {
     mdversion:'0.0.4',
     yjversion:'0.0.4',
     ejversion:'0.0.4',
-    url: 'https://raw.githubusercontent.com/SauronLi/haiker/main/code/',
-    icon: 'https://raw.githubusercontent.com/SauronLi/haiker/main/code/src/',
+    url: 'https://raw.gitmirror.com/SauronLi/haiker/main/code/',
+    icon: 'https://raw.gitmirror.com/SauronLi/haiker/main/code/src/',
     localhost: 'hiker://files/bgHouse/'
 }
 var yijimenu = [{

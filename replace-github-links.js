@@ -4,8 +4,8 @@ const path = require('path');
 // ================= 配置部分 =================
 const MIRRORS = [  // 多个镜像地址模板
   'https://gh-proxy.com/$1://github.com',
-  'https://ghproxy.net/$1://github.com',
-  'https://gitclone.com/$1://github.com'
+  //'https://ghproxy.net/$1://github.com',
+  //'https://gitclone.com/$1://github.com'
 ];
 
 const RAW_MIRRORS = [  // Raw文件专用镜像
@@ -14,7 +14,7 @@ const RAW_MIRRORS = [  // Raw文件专用镜像
   'https://raw.gitmirror.com'
 ];
 
-const TARGET_DIR = '/storage/emulated/0/Documents/workspace/haiker';
+const TARGET_DIR = './';
 const FILE_EXTENSIONS = ['.md', '.txt', '.js', '.html', '.css', '.json'];
 const DRY_RUN = false;
 // ===========================================

@@ -2,11 +2,11 @@ var updateLog = '2022/09/26 初制作模版';
 var version = {
     author: "bgcode",
     ver: "0.0.2",
-    Id: "https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/hikerule/main/l/moban.js",
+    Id: "https://ghproxy.com/https://raw.gitmirror.com/Codebglh/hikerule/main/l/moban.js",
     update: '2022/09/26 14:25',
     info: updateLog,
     ok: 'https://okjx.cc/?url=',
-    url: 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/hikerule/main/l/',
+    url: 'https://ghproxy.com/https://raw.gitmirror.com/Codebglh/hikerule/main/l/',
 };
 
 function yiji() {
@@ -162,7 +162,7 @@ function moban() {
         col_type: 'text_3',
         url: $('#noLoading#').lazyRule((filePath, fileName) => {
             return $(`确认初始化本地模板文件:${fileName}?将公开模板覆盖本地模板文件`).confirm((filePath, fileName) => {
-                let api = 'https://ghproxy.com/https://raw.githubusercontent.com/Codebglh/hikerule/main/l/json/'
+                let api = 'https://ghproxy.com/https://raw.gitmirror.com/Codebglh/hikerule/main/l/json/'
                 let mobans = {
                     一级模板: api + '1.json',
                     二级模板: api + '2.json',
